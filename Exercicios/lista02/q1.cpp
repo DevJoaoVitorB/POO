@@ -6,4 +6,6 @@ int main() {
     printf("Digite seu Primeiro Nome: ");
     scanf("%s", string);
     printf("Bem Vindo ao Python, %s", string);
+
+    return 0;
 }
