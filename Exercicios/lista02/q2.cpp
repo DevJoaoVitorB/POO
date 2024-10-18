@@ -1,11 +1,12 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main(){
     char name[100];
 
-    printf("Digite seu Nome Completo: ");
-    scanf("%s", name);
-    printf("Bem-Vindo ao Python, %s!", name);
+    cout << "Digite seu Nome Completo: ";
+    cin >> name;
+    cout << "Bem-Vindo ao C++, " << name << "!" << endl;
 
     return 0;
 }

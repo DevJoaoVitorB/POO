@@ -1,22 +1,18 @@
-#include <stdio.h>
+#include <iostream>
 #include <math.h>
-
-float calc(int h, int b){
-    float area, perimeter, diagonally;
-
-    area = h * b;
-    perimeter = h * 2 + b * 2;
-    diagonally = sqrt(pow(h, 2) + pow(b, 2));
-
-    return area, perimeter, diagonally;
-}
+using namespace std;
 
 int main(){
     int height, base;
+    float area, perimeter, diagonally;
 
-    printf("Digite um Valor para a Altura e Base de um Retângulo: ");
-    scanf("%d %d", height, base);
+    cout << "Digite um Valor para a Altura e Base de um Retângulo: ";
+    cin >> height >> base;
 
-    printf("Area = %.2f - Perímetro = %.2f - Diagonal = %.2f", calc(height, base));
+    area = height * base;
+    perimeter = height * 2 + base * 2;
+    diagonally = sqrt(pow(height, 2) + pow(base, 2));
+
+    cout << "Area = " << area << " - Perímetro = " << perimeter << " - Diagonal = " << diagonally << endl;
     return 0;
 }
