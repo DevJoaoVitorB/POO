@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marry\\Documents\\POO\\Exercicios\\lista01_c#poo\\lista01c#\\lista01c#.csproj": {}
+    "C:\\Users\\20241014040019\\Documents\\POO\\Exercicios\\lista01_POO\\lista01_POO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marry\\Documents\\POO\\Exercicios\\lista01_c#poo\\lista01c#\\lista01c#.csproj": {
+    "C:\\Users\\20241014040019\\Documents\\POO\\Exercicios\\lista01_POO\\lista01_POO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marry\\Documents\\POO\\Exercicios\\lista01_c#poo\\lista01c#\\lista01c#.csproj",
-        "projectName": "lista01c#",
-        "projectPath": "C:\\Users\\Marry\\Documents\\POO\\Exercicios\\lista01_c#poo\\lista01c#\\lista01c#.csproj",
-        "packagesPath": "C:\\Users\\Marry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marry\\Documents\\POO\\Exercicios\\lista01_c#poo\\lista01c#\\obj\\",
+        "projectUniqueName": "C:\\Users\\20241014040019\\Documents\\POO\\Exercicios\\lista01_POO\\lista01_POO.csproj",
+        "projectName": "lista01_POO",
+        "projectPath": "C:\\Users\\20241014040019\\Documents\\POO\\Exercicios\\lista01_POO\\lista01_POO.csproj",
+        "packagesPath": "C:\\Users\\20241014040019\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\20241014040019\\Documents\\POO\\Exercicios\\lista01_POO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marry\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\20241014040019\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
