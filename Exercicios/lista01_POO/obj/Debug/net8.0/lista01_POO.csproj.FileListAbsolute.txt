@@ -1,0 +1,15 @@
+/workspaces/POO/Exercicios/lista01_POO/bin/Debug/net8.0/lista01_POO
+/workspaces/POO/Exercicios/lista01_POO/bin/Debug/net8.0/lista01_POO.deps.json
+/workspaces/POO/Exercicios/lista01_POO/bin/Debug/net8.0/lista01_POO.runtimeconfig.json
+/workspaces/POO/Exercicios/lista01_POO/bin/Debug/net8.0/lista01_POO.dll
+/workspaces/POO/Exercicios/lista01_POO/bin/Debug/net8.0/lista01_POO.pdb
+/workspaces/POO/Exercicios/lista01_POO/obj/Debug/net8.0/lista01_POO.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/POO/Exercicios/lista01_POO/obj/Debug/net8.0/lista01_POO.AssemblyInfoInputs.cache
+/workspaces/POO/Exercicios/lista01_POO/obj/Debug/net8.0/lista01_POO.AssemblyInfo.cs
+/workspaces/POO/Exercicios/lista01_POO/obj/Debug/net8.0/lista01_POO.csproj.CoreCompileInputs.cache
+/workspaces/POO/Exercicios/lista01_POO/obj/Debug/net8.0/lista01_POO.sourcelink.json
+/workspaces/POO/Exercicios/lista01_POO/obj/Debug/net8.0/lista01_POO.dll
+/workspaces/POO/Exercicios/lista01_POO/obj/Debug/net8.0/refint/lista01_POO.dll
+/workspaces/POO/Exercicios/lista01_POO/obj/Debug/net8.0/lista01_POO.pdb
+/workspaces/POO/Exercicios/lista01_POO/obj/Debug/net8.0/lista01_POO.genruntimeconfig.cache
+/workspaces/POO/Exercicios/lista01_POO/obj/Debug/net8.0/ref/lista01_POO.dll
