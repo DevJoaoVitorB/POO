@@ -1,8 +1,33 @@
 class Cine
 {
-    // Armazenamento de Atributos
-    public string day = "";
-    public int hours = 0;
+    // Propriedades/Variaveis
+    private string day;
+    private int hours;
+    private string[] days = {"Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sabado", "Domingo"};
+
+    // Construtor
+        // Construtor Vazio! - Não está inicializando nenhuma Propriedade.
+    public Cine(){}
+        // Construtor que está inicializando as Propriedades da Classe.
+    public Cine(string day, int hours){
+        if (days.Contains(day)) this.day = day;
+        if (hours > 0 && hours <= 24) this.hours = hours;
+    }
+
+    // Encapsulamento
+    public void SetDay(string day){
+        if (days.Contains(day)) this.day = day;
+    }
+    public void SetHours(int hours){
+        if (hours > 0 && hours <= 24) this.hours = hours;
+    }
+
+    public string GetDay(){
+        return day;
+    }
+    public int GetHours(){
+        return hours;
+    }
 
     // Metodos
     public double Entrace(){
