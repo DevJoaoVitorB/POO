@@ -24,7 +24,7 @@ class Delivery
     }
     
     public double CalcDelivery(){
-        return 0.01 * (weight / distance);
+        return 0.01 * weight * distance;
     }
     public override string ToString(){
         return $"Distância da Viagem: {distance:n0}km, Peso da Carga: {weight:f2}kg";

@@ -3,3 +3,13 @@
 /workspaces/POO/Exercicios/lista03_POO/obj/Debug/net8.0/lista03_POO.AssemblyInfo.cs
 /workspaces/POO/Exercicios/lista03_POO/obj/Debug/net8.0/lista03_POO.csproj.CoreCompileInputs.cache
 /workspaces/POO/Exercicios/lista03_POO/obj/Debug/net8.0/lista03_POO.sourcelink.json
+/workspaces/POO/Exercicios/lista03_POO/bin/Debug/net8.0/lista03_POO
+/workspaces/POO/Exercicios/lista03_POO/bin/Debug/net8.0/lista03_POO.deps.json
+/workspaces/POO/Exercicios/lista03_POO/bin/Debug/net8.0/lista03_POO.runtimeconfig.json
+/workspaces/POO/Exercicios/lista03_POO/bin/Debug/net8.0/lista03_POO.dll
+/workspaces/POO/Exercicios/lista03_POO/bin/Debug/net8.0/lista03_POO.pdb
+/workspaces/POO/Exercicios/lista03_POO/obj/Debug/net8.0/lista03_POO.dll
+/workspaces/POO/Exercicios/lista03_POO/obj/Debug/net8.0/refint/lista03_POO.dll
+/workspaces/POO/Exercicios/lista03_POO/obj/Debug/net8.0/lista03_POO.pdb
+/workspaces/POO/Exercicios/lista03_POO/obj/Debug/net8.0/lista03_POO.genruntimeconfig.cache
+/workspaces/POO/Exercicios/lista03_POO/obj/Debug/net8.0/ref/lista03_POO.dll

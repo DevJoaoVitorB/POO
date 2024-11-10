@@ -21,6 +21,6 @@ class Converter
     }
 
     public override string ToString(){
-        return $"Número Inteiro = {number}";
+        return $"Número Inteiro: {number}";
     }
 }

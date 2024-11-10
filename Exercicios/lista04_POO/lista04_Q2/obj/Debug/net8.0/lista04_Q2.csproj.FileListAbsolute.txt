@@ -1,0 +1,15 @@
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/obj/Debug/net8.0/lista04_Q2.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/obj/Debug/net8.0/lista04_Q2.AssemblyInfoInputs.cache
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/obj/Debug/net8.0/lista04_Q2.AssemblyInfo.cs
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/obj/Debug/net8.0/lista04_Q2.csproj.CoreCompileInputs.cache
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/obj/Debug/net8.0/lista04_Q2.sourcelink.json
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/bin/Debug/net8.0/lista04_Q2
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/bin/Debug/net8.0/lista04_Q2.deps.json
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/bin/Debug/net8.0/lista04_Q2.runtimeconfig.json
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/bin/Debug/net8.0/lista04_Q2.dll
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/bin/Debug/net8.0/lista04_Q2.pdb
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/obj/Debug/net8.0/lista04_Q2.dll
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/obj/Debug/net8.0/refint/lista04_Q2.dll
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/obj/Debug/net8.0/lista04_Q2.pdb
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/obj/Debug/net8.0/lista04_Q2.genruntimeconfig.cache
+/workspaces/POO/Exercicios/lista04_POO/lista04_Q2/obj/Debug/net8.0/ref/lista04_Q2.dll

@@ -1,13 +1,12 @@
 public class Menu
 {
+    private Rectangle x = new Rectangle();
+    private Delivery y = new Delivery();
+    private Converter z = new Converter();
+    private Equation w = new Equation();
+    private Data a = new Data();
+    private int value = 0;
     public void Choice(){
-        Rectangle x = new Rectangle();
-        Delivery y = new Delivery();
-        Converter z = new Converter();
-        Equation w = new Equation();
-        Data a = new Data();
-        int value = 0;
-
         do{
             Console.Write("Escolha a Questão [1]Q1 [2]Q2 [3]Q3 [4]Q4 [5]Q5 [6]Sair: ");
             value = int.Parse(Console.ReadLine());
@@ -47,7 +46,7 @@ public class Menu
                     w.SetA(int.Parse(Console.ReadLine()));
                     w.SetB(int.Parse(Console.ReadLine()));
                     w.SetC(int.Parse(Console.ReadLine()));
-                    Console.WriteLine(z.ToString());
+                    Console.WriteLine(w.ToString());
                     Console.WriteLine($"Valor do Delta da Equação: {w.Delta():f2} \nValor da Raíz1: {w.Root1():f2} \nValor da Raíz2: {w.Root2():f2} \nApresenta Raíz Real: {w.RealRoot()} \n");
                     break;
                 case 5:
