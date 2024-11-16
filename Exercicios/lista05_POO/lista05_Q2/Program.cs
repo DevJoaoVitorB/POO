@@ -9,8 +9,8 @@ static class Menu{
 
     public static void Choice(){
         do{
-            Console.WriteLine("Emissão e Pagemento de Boleto!")
-            Console.WriteLine("Escolha - [1]Emitir Boleto [2]Pagar Boleto [3]Verificar Boleto [4]Sair")
+            Console.WriteLine("Emissão e Pagemento de Boleto!");
+            Console.WriteLine("Escolha - [1]Emitir Boleto [2]Pagar Boleto [3]Verificar Boleto [4]Sair");
             value = int.Parse(Console.ReadLine());
             Console.Clear();
 
@@ -18,8 +18,8 @@ static class Menu{
                 case 1:
                     Console.WriteLine("Informe o Valor do Boleto: ");
                     valueBill = decimal.Parse(Console.ReadLine());
-                    code = string.Parse(random.Next(13294850383, 99999999999));
-                    DateTime emission = DateTime.Today();
+                    code = random.Next(1329485, 9999999).ToString();
+                    DateTime emission = DateTime.Now;
                     DateTime payDay = emission.AddMonths(1);
                     bill = new Bill(code, emission, payDay, valueBill);
                     break;
@@ -27,6 +27,7 @@ static class Menu{
                     Console.WriteLine($"{bill.ToString()}");
                     Console.WriteLine("\nInforme o Valor a ser Pago: R$");
                     valuePay = decimal.Parse(Console.ReadLine());
+                    bill.Pay(valuePay);
                     break;
                 case 3:
                     Console.WriteLine($"{bill.ToString()}");

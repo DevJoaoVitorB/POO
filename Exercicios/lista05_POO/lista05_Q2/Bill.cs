@@ -3,20 +3,32 @@ class Bill
     private string code;
     private DateTime dateEmission = new DateTime();
     private DateTime datePay = new DateTime();
-    private decimal valueBill, valuePay;
-    private Pay paySituation = new Pay();
+    private decimal valueBill, valuePay, bill;
+    private Pay paySituation = global::Pay.EmAberto;
 
     public Bill(){}
     public Bill(string code, DateTime emission, DateTime Payday, decimal valueBill){
-        if (code.Length >= 5) this.code = code;
         if (valueBill > 0) this.valueBill = valueBill;
-        if (code.Length < 5 || valueBill <= 0) throw new ArgumentException("Valor(es) Inválido(s)!")
+        if (valueBill <= 0) throw new ArgumentException("Valor(es) Inválido(s)!");
+        this.code = code;
         dateEmission = emission;
         datePay = Payday;
+        bill = valueBill;
     }
 
     public void Pay(decimal valuePay){
-        valueBill -= valuePay;
+        if (valuePay >= valueBill){
+            valueBill = 0;
+            this.valuePay = valueBill; 
+            paySituation = global::Pay.Pago;
+        } else if (valuePay < valueBill && valuePay != 0) {
+            valueBill -= valuePay;
+            this.valuePay = valuePay;
+            paySituation = global::Pay.ParcialmentePago;
+        } else {
+            this.valuePay = valuePay;
+            paySituation = global::Pay.EmAberto;
+        }
     }
 
     public Pay SituationBill(){
@@ -24,14 +36,11 @@ class Bill
     }
 
     public override string ToString(){
-        return $"Boleto: \nCódigo de Barra: {code} \nData de Emissão: {dateEmission} \nVencimento: {datePay} \nValor da Fatura: {valueBill:f2} \nValor Pago: {valuePay:f2} \nSituação do Boleto: {paySituation} \n";
+        return $"Boleto: \nData de Emissão: {dateEmission} \nVencimento: {datePay} \nValor da Fatura: R${bill:f2}\nValor a Ser Pago: R${valueBill:f2}\nValor Pago: R${valuePay:f2} \nSituação do Boleto: {paySituation} \nCódigo de Barra: {code} \n";
     }
 }
 
-class Pay
+enum Pay
 {
-    private int open, partialPay, pay;
-    public enum Situation{
-                   
-    }
+    EmAberto, ParcialmentePago, Pago
 }
