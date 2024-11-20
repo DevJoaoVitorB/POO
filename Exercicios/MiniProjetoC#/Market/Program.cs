@@ -21,6 +21,18 @@ static class UI
                 case 4:
                     UpdateRegister();
                     break;
+                case 5:
+                    CreateCategory();
+                    break;
+                case 6:
+                    DelCategory();
+                    break;
+                case 7:
+                    ListCategories();
+                    break;
+                case 8:
+                    UpdateCategory();
+                    break;
                 case 13:
                     break;
                 default:
@@ -35,11 +47,12 @@ static class UI
 
     public static int Menu(){
         Console.WriteLine("------------------------------ Menu de Cadastro -------------------------------");
-        Console.WriteLine("Clientes: \n[1]Inserir Cliente [2]Excluir Cliente [3]Listar Clientes [4]Atualizar Cadastro");
-        Console.WriteLine("\nCategorias: \n[5]Criar Categoria [6]Excluir Categoria [7]Listar Categorias [8]Atualizar Categoria") ;
-        Console.WriteLine("\nProduto: \n[9]Inserir Produto [10]Excluir Produto [11]Listar Produtos [12]Atualizar Produto");
+        Console.WriteLine("Clientes: [1]Inserir Cliente [2]Excluir Cliente [3]Listar Clientes [4]Atualizar Cadastro");
+        Console.WriteLine("Categorias: [5]Criar Categoria [6]Excluir Categoria [7]Listar Categorias [8]Atualizar Categoria") ;
+        Console.WriteLine("Produto: [9]Inserir Produto [10]Excluir Produto [11]Listar Produtos [12]Atualizar Produto");
         Console.WriteLine("\n[13]Sair");
         Console.WriteLine("-------------------------------------------------------------------------------");
+        Console.Write("O Que Deseja: ");
         return int.Parse(Console.ReadLine());
     }
 
@@ -93,5 +106,49 @@ static class UI
         // Criar Novo Cliente e Substituir o Velho pelo Novo 
         Client c = new Client(id, name, email, phone);
         ListClient.Update(c);
+    }
+
+    public static void CreateCategory(){
+        // Informações da Categoria
+        Console.WriteLine("Informe a Descrição da Categoria(NOME): ");
+        string description = Console.ReadLine();
+        Category c = new Category(0, description);
+        // Criar Categoria
+        CategoryList.Create(c);
+    }
+
+    public static void DelCategory(){
+        // Lista Categoria
+        ListCategories();
+        // ID da Categoria que Deseja ser Deletada
+        Console.WriteLine("Informe o Número da Categoria que Deseja Excluir: ");
+        int id = int.Parse(Console.ReadLine());
+        // Deletar Categoria
+        Category c = CategoryList.ListId(id);
+        CategoryList.Del(c);
+    }
+
+    public static void ListCategories(){
+        // Retorna a Lista de Categorias - Nenhuma Categoria || Lista de Categoria
+        if (CategoryList.List().Count() == 0){
+            Console.WriteLine("Nenhuma Categoria Encontrada! \n");
+        } else {
+            Console.WriteLine("Lista de Categorias: ");
+            foreach (Category x in CategoryList.List()) Console.WriteLine($"{x} \n");
+        }
+    }
+
+    public static void UpdateCategory(){
+        // Lista de Categorias
+        ListCategories();
+        // Informa o ID da Categoria a ser Alterada
+        Console.WriteLine("Informe o Número da Categoria que Deseja Atualizar os Dados: ");
+        int id = int.Parse(Console.ReadLine());
+        // Novas Informações da Categoria
+        Console.WriteLine("Informe a Nova Descrição(NOME) da Categoria: ");
+        string description = Console.ReadLine();
+        // Substituir a Velha Categoria pela Nova
+        Category c = new Category(id, description);
+        CategoryList.Update(c); 
     }
 }

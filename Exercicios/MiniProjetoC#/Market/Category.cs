@@ -36,7 +36,7 @@ static class CategoryList
         return null;
     }
 
-    public static void Update(Client c){
+    public static void Update(Category c){
         // Atualizar Dados da Categoria e Salvar
         Category category = ListId(c.id);
         if (category != null){
@@ -44,9 +44,34 @@ static class CategoryList
             Close();
         }
     }
+
+    public static void Open(){
+        // Abrir ou Criar um Arquivo .json
+        Categories.Clear();
+        try{
+            string write = File.ReadAllText("Category.json");
+            Categories = JsonSerializer.Deserialize<List<Category>>(write);
+        } catch (FileNotFoundException) {}
+    }
+
+    public static void Close(){
+        // Salvar a Lista de Clientes no Arquivo .json
+        string save = JsonSerializer.Serialize<List<Category>>(Categories);
+        File.WriteAllText("Category.json", save);
+    }
 }
 
 class Category
 {
+    public int id {get; set;}
+    public string description {get; set;}
 
+    public Category(int id, string description){
+        this.id = id;
+        this.description = description;
+    }
+
+    public override string ToString(){
+        return $"Categoria {id}: \nDescrição: {description}\n";
+    }
 }
