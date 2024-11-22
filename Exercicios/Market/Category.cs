@@ -4,22 +4,22 @@ static class CategoryList
 {
     private static List<Category> Categories = new List<Category>();
 
-    public static void Create(Category c){
+    public static void Insert(Category x){
         // Abrir Lista de Categorias
         Open();
         // Obter o Maior ID da Lista de Categorias e Somar +1
         int id = 0;
-        foreach (Category x in Categories) if(x.id > id) id = x.id;
-        c.id = id + 1;
+        foreach (Category c in Categories) if(c.id > id) id = c.id;
+        x.id = id + 1;
         // Adicionar Categoria e Salvar
-        Categories.Add(c);
+        Categories.Add(x);
         Close();
     } 
 
-    public static void Del(Category c){
+    public static void Del(Category x){
         // Remover a Categoria e Salvar
-        if (c != null){
-            Categories.Remove(c);
+        if (x != null){
+            Categories.Remove(x);
             Close();
         }
     }
@@ -36,11 +36,11 @@ static class CategoryList
         return null;
     }
 
-    public static void Update(Category c){
+    public static void Update(Category x){
         // Atualizar Dados da Categoria e Salvar
-        Category category = ListId(c.id);
-        if (category != null){
-            category.description = c.description;
+        Category c = ListId(x.id);
+        if (c != null){
+            c.description = x.description;
             Close();
         }
     }
@@ -63,8 +63,8 @@ static class CategoryList
 
 class Category
 {
-    public int id {get; set;}
-    public string description {get; set;}
+    public int id { get; set; }
+    public string description { get; set; }
 
     public Category(int id, string description){
         this.id = id;
@@ -72,6 +72,6 @@ class Category
     }
 
     public override string ToString(){
-        return $"Categoria {id}: \nDescrição: {description}\n";
+        return $"Categoria {id}: \nDescrição: {description} \n";
     }
 }

@@ -1,25 +1,25 @@
 using System.Text.Json;
 
-static class ListClient
+static class ClientList
 {
     private static List<Client> Clients = new List<Client>();
 
-    public static void Insert(Client c){
-        // Abrir Lista de Categorias
+    public static void Insert(Client x){
+        // Abrir Lista de Clientes
         Open();
         // Obter o Maior ID da Lista de Clientes e Somar +1
         int id = 0;
-        foreach (Client client in Clients) if (client.id > id) id = client.id;
-        c.id = id + 1;
+        foreach (Client c in Clients) if (c.id > id) id = c.id;
+        x.id = id + 1;
         // Adicionar Cliente e Salvar
-        Clients.Add(c);
+        Clients.Add(x);
         Close();
     }
 
-    public static void Del(Client c){
+    public static void Del(Client x){
         // Excluir Cadastro e Salvar
-        if (c != null){
-            Clients.Remove(c);
+        if (x != null){
+            Clients.Remove(x);
             Close();
         } 
     }
@@ -37,13 +37,13 @@ static class ListClient
         return null;
     }
 
-    public static void Update(Client c){
+    public static void Update(Client x){
         // Atualizar Cadastro e Salvar
-        Client client = ListId(c.id);
-        if (client != null){
-            client.name = c.name;
-            client.email = c.email;
-            client.phone = c.phone;
+        Client c = ListId(x.id);
+        if (c != null){
+            c.name = x.name;
+            c.email = x.email;
+            c.phone = x.phone;
             Close();
         }
     }

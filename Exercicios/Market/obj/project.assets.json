@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/POO/Exercicios/MiniProjetoC#/Market/Market.csproj",
+      "projectUniqueName": "/workspaces/POO/Exercicios/Market/Market.csproj",
       "projectName": "Market",
-      "projectPath": "/workspaces/POO/Exercicios/MiniProjetoC#/Market/Market.csproj",
+      "projectPath": "/workspaces/POO/Exercicios/Market/Market.csproj",
       "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/POO/Exercicios/MiniProjetoC#/Market/obj/",
+      "outputPath": "/workspaces/POO/Exercicios/Market/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/codespace/.nuget/NuGet/NuGet.Config"

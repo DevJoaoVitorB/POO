@@ -16,7 +16,7 @@ static class UI
                     ClientDel();
                     break;
                 case 3:
-                    ClientList();
+                    ListC1();
                     break;
                 case 4:
                     UpdateRegister();
@@ -28,10 +28,22 @@ static class UI
                     DelCategory();
                     break;
                 case 7:
-                    ListCategories();
+                    ListC2();
                     break;
                 case 8:
                     UpdateCategory();
+                    break;
+                case 9:
+                    CreateItem();
+                    break;
+                case 10:
+                    DelItem();
+                    break;
+                case 11:
+                    ListI();
+                    break;
+                case 12:
+                    UpdateItem();
                     break;
                 case 13:
                     break;
@@ -64,36 +76,36 @@ static class UI
         string email = Console.ReadLine();
         Console.WriteLine("Digite o Telefone do Cliente (Padrão: DD9XXXXXXXX): ") ;
         string phone = Console.ReadLine();
-        Client c = new Client(0, name, email, phone);
+        Client x = new Client(0, name, email, phone);
         // Inserir Cliente na Lista de Clientes
-        ListClient.Insert(c);
+        ClientList.Insert(x);
     }
 
     public static void ClientDel(){
         // Listar Clientes
-        ClientList();
-        // Informa o ID do Cadastro que Deseja Excluir
+        ListC1();
+        // ID do Cadastro a ser Excluir
         Console.WriteLine("Informe o Id do Cliente que Deseja Excluir: ");
         int id = int.Parse(Console.ReadLine());
         // Deletar um Cadastro
-        Client c = ListClient.ListId(id);
-        ListClient.Del(c);
+        Client x = ClientList.ListId(id);
+        ClientList.Del(x);
     }
 
-    public static void ClientList(){
+    public static void ListC1(){
         // Listar Clientes - Sem Cliente || Lista de Clientes
-        if (ListClient.List().Count() == 0){
+        if (ClientList.List().Count() == 0){
             Console.WriteLine("Sem Clientes Cadastrados! \n");
         } else {
             Console.WriteLine("Lista de Clientes: ");
-            foreach (Client i in ListClient.List()) Console.WriteLine($"{i} \n");
+            foreach (Client c in ClientList.List()) Console.WriteLine($"{c} \n");
         }
     }
 
     public static void UpdateRegister(){
         // Listar Clientes
-        ClientList();
-        // Informa o ID do Cadastro que Deseja Atualizar
+        ListC1();
+        // ID do Cadastro a ser Atualizado
         Console.WriteLine("Informe o Id do Cliente que Deseja Atualizar os Dados: ");
         int id = int.Parse(Console.ReadLine());
         // Novas Informações de Cadastro
@@ -104,51 +116,103 @@ static class UI
         Console.WriteLine("Digite o Novo Telefone do Cliente (Padrão: DD9XXXXXXXX): ");
         string phone = Console.ReadLine();
         // Criar Novo Cliente e Substituir o Velho pelo Novo 
-        Client c = new Client(id, name, email, phone);
-        ListClient.Update(c);
+        Client x = new Client(id, name, email, phone);
+        ClientList.Update(x);
     }
 
     public static void CreateCategory(){
         // Informações da Categoria
         Console.WriteLine("Informe a Descrição da Categoria(NOME): ");
         string description = Console.ReadLine();
-        Category c = new Category(0, description);
+        Category x = new Category(0, description);
         // Criar Categoria
-        CategoryList.Create(c);
+        CategoryList.Insert(x);
     }
 
     public static void DelCategory(){
         // Lista Categoria
-        ListCategories();
-        // ID da Categoria que Deseja ser Deletada
+        ListC2();
+        // ID da Categoria a ser Deletada
         Console.WriteLine("Informe o Número da Categoria que Deseja Excluir: ");
         int id = int.Parse(Console.ReadLine());
         // Deletar Categoria
-        Category c = CategoryList.ListId(id);
-        CategoryList.Del(c);
+        Category x = CategoryList.ListId(id);
+        CategoryList.Del(x);
     }
 
-    public static void ListCategories(){
+    public static void ListC2(){
         // Retorna a Lista de Categorias - Nenhuma Categoria || Lista de Categoria
         if (CategoryList.List().Count() == 0){
             Console.WriteLine("Nenhuma Categoria Encontrada! \n");
         } else {
             Console.WriteLine("Lista de Categorias: ");
-            foreach (Category x in CategoryList.List()) Console.WriteLine($"{x} \n");
+            foreach (Category c in CategoryList.List()) Console.WriteLine($"{c} \n");
         }
     }
 
     public static void UpdateCategory(){
         // Lista de Categorias
-        ListCategories();
-        // Informa o ID da Categoria a ser Alterada
+        ListC2();
+        // ID da Categoria a ser Atualizada
         Console.WriteLine("Informe o Número da Categoria que Deseja Atualizar os Dados: ");
         int id = int.Parse(Console.ReadLine());
         // Novas Informações da Categoria
         Console.WriteLine("Informe a Nova Descrição(NOME) da Categoria: ");
         string description = Console.ReadLine();
         // Substituir a Velha Categoria pela Nova
-        Category c = new Category(id, description);
-        CategoryList.Update(c); 
+        Category x = new Category(id, description);
+        CategoryList.Update(x); 
+    }
+
+    public static void CreateItem(){
+        // Informações do Produto
+        Console.WriteLine("Informe a Descrição(NOME) do Produto: ");
+        string description = Console.ReadLine();
+        Console.Write("Informe o Preço do Produto: R$");
+        double price = double.Parse(Console.ReadLine());
+        Console.WriteLine("Informe a Quantidade em Estoque do Produto: ");
+        int storage = int.Parse(Console.ReadLine());
+        Item x = new Item(0, description, price, storage);
+        // Criar Produto
+        ItemList.Insert(x);
+    }
+
+    public static void DelItem(){
+        // Listar Produto
+        ListI();
+        // ID do Produto a ser Deletado
+        Console.WriteLine("Informe o Número do Produto a ser Excluido: ");
+        int id = int.Parse(Console.ReadLine());
+        // Deletar o Produto
+        Item x = ItemList.ListId(id);
+        ItemList.Del(x);
+    }
+
+    public static void ListI(){
+        // Retorna a Lista de Produtos - Nenhum Produto || Lista de Produtos
+         if (ItemList.List().Count() == 0){
+            Console.WriteLine("Nenhum Produto Encontrada! \n");
+        } else {
+            Console.WriteLine("Lista de Produtos: ");
+            foreach (Item i in ItemList.List()) Console.WriteLine($"{i} \n");
+        }
+    }
+
+    public static void UpdateItem(){
+        // Lista Produtos
+        ListI();
+        // Informa o ID do Produto a ser Atualizado
+        Console.WriteLine("Informe o Número do Produto que Deseja Atualizar os Dados: ");
+        int id = int.Parse(Console.ReadLine());
+        // Novas Informações do Produto
+        Console.WriteLine("Informe a nova Descrição(NOME) do Produto: ");
+        string description = Console.ReadLine();
+        Console.Write("Informe o novo Preço do Produto: R$");
+        double price = double.Parse(Console.ReadLine());
+        Console.WriteLine("Informe a nova Quantidade em Estoque do Produto: ");
+        int storage = int.Parse(Console.ReadLine());
+        // Substituir o Velho Produto pelo Novo
+        Item x = new Item(id, description, price, storage);
+        ItemList.Update(x);
     }
 }
