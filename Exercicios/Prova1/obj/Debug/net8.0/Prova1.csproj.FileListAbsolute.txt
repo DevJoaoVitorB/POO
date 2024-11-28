@@ -1,0 +1,5 @@
+/workspaces/POO/Exercicios/Prova1/obj/Debug/net8.0/Prova1.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/POO/Exercicios/Prova1/obj/Debug/net8.0/Prova1.AssemblyInfoInputs.cache
+/workspaces/POO/Exercicios/Prova1/obj/Debug/net8.0/Prova1.AssemblyInfo.cs
+/workspaces/POO/Exercicios/Prova1/obj/Debug/net8.0/Prova1.csproj.CoreCompileInputs.cache
+/workspaces/POO/Exercicios/Prova1/obj/Debug/net8.0/Prova1.sourcelink.json
