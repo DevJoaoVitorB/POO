@@ -108,10 +108,26 @@ static class UI
     }
 
     public static void AtletaMaisRapido(){
+        List<Treino> treinos = Treinos.Listar();
+        Treino menor = treinos[0];
 
+        foreach(Treino i in Treinos.Listar()) if(i.Pace() < menor.Pace()) menor = i;
+
+        Console.WriteLine($"Atleta Mais Rápido: {menor.GetIdAtleta()}");
     }
 
     public static void TreinoMaisRapido(){
+        Console.WriteLine("Informe o ID do Atleta que Deseja Verificar o Treino Mais Rápido: ");
+        int id = int.Parse(Console.ReadLine());
 
+        foreach(Treino i in Treinos.Listar()) if(i.GetIdAtleta() == idAtleta) Treino menor = i;
+
+        foreach(Treino i in Treinos.Listar()){
+             if(i.GetIdAtleta() == idAtleta){
+                if(i.Pace() < menor.Pace()) menor = i;
+             }
+        }
+
+        Console.WriteLine($"Treino Mais Rápido: {menor}");
     }
 }

@@ -15,6 +15,10 @@ class Treino
         this.tempo = tempo;
     }
 
+    public int GetIdAtleta(){
+        return idAtleta;
+    }
+
     public double Pace(){
         double t = ((double)(tempo.Hours * 60)) + (double)tempo.Minutes + ((double)(tempo.Seconds/60));
         return (double)t/distancia;
