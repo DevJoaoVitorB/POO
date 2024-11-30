@@ -73,12 +73,12 @@ class Item
     public int storage { get; set; }
     public int idCategory { get; set; }
 
-    public Item(int id, string description, double price, int storage){
+    public Item(int id, string description, double price, int storage, int idCategory){
         this.id = id;
         this.description = description;
         this.price = price;
         this.storage = storage;
-        idCategory = 0;
+        this.idCategory = idCategory;
     }
 
     public override string ToString(){
