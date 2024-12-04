@@ -50,6 +50,10 @@ static class View
         return ItemList.List();
     }
 
+    public static Item List3Id(int id){
+        return ItemList.ListId(id);
+    }
+
     public static void Update1(int id, string name, string email, string phone){
         Client x = new Client(id, name, email, phone);
         ClientList.Update(x);
@@ -65,7 +69,13 @@ static class View
         ItemList.Update(x);
     }
 
-    public static void Percentual(double percentual){
-        foreach(Item i in List3()) Update3(i.id, i.description, (1 + percentual) * i.price, i.storage, i.idCategory);
+    public static void Percentual(double percentual){ 
+        for(int i = 0; i < List3().Count(); i++){
+            Item copy = List3()[i];
+            Item x = List3Id(copy.id);
+
+            x.price = (1 + percentual) * copy.price;
+            ItemList.Close();
+        }
     }
 }

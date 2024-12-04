@@ -41,7 +41,8 @@ static class ItemList
         // Atualizar Dados de um Produto e Salvar
         Item i = ListId(x.id);
         if (i != null){
-            
+            Products.Remove(i);
+            Products.Add(x);
             Close();
         }
     }
