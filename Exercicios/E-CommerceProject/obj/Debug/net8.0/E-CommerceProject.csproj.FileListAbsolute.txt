@@ -1,0 +1,15 @@
+/workspaces/POO/Exercicios/E-CommerceProject/bin/Debug/net8.0/E-CommerceProject
+/workspaces/POO/Exercicios/E-CommerceProject/bin/Debug/net8.0/E-CommerceProject.deps.json
+/workspaces/POO/Exercicios/E-CommerceProject/bin/Debug/net8.0/E-CommerceProject.runtimeconfig.json
+/workspaces/POO/Exercicios/E-CommerceProject/bin/Debug/net8.0/E-CommerceProject.dll
+/workspaces/POO/Exercicios/E-CommerceProject/bin/Debug/net8.0/E-CommerceProject.pdb
+/workspaces/POO/Exercicios/E-CommerceProject/obj/Debug/net8.0/E-CommerceProject.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/POO/Exercicios/E-CommerceProject/obj/Debug/net8.0/E-CommerceProject.AssemblyInfoInputs.cache
+/workspaces/POO/Exercicios/E-CommerceProject/obj/Debug/net8.0/E-CommerceProject.AssemblyInfo.cs
+/workspaces/POO/Exercicios/E-CommerceProject/obj/Debug/net8.0/E-CommerceProject.csproj.CoreCompileInputs.cache
+/workspaces/POO/Exercicios/E-CommerceProject/obj/Debug/net8.0/E-CommerceProject.sourcelink.json
+/workspaces/POO/Exercicios/E-CommerceProject/obj/Debug/net8.0/E-CommerceProject.dll
+/workspaces/POO/Exercicios/E-CommerceProject/obj/Debug/net8.0/refint/E-CommerceProject.dll
+/workspaces/POO/Exercicios/E-CommerceProject/obj/Debug/net8.0/E-CommerceProject.pdb
+/workspaces/POO/Exercicios/E-CommerceProject/obj/Debug/net8.0/E-CommerceProject.genruntimeconfig.cache
+/workspaces/POO/Exercicios/E-CommerceProject/obj/Debug/net8.0/ref/E-CommerceProject.dll
