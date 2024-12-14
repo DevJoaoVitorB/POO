@@ -2,7 +2,7 @@ using System.Text.Json;
 
 static class ProductList
 {
-    private static List<Product> Products = new List<Product>();
+    private static List<Product> Products = new List<Product>(); // Lista de Produtos
 
     public static void Insert(Product x){
         // Abrir Lista de Produtos

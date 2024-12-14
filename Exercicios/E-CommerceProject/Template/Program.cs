@@ -1,9 +1,10 @@
 ﻿IndexUI.MainUI();
 static class IndexUI
 {
-    private static int id = 0;
-    private static string name = "";
+    private static int id = 0; // ID da Pessoa Cadastrada
+    private static string name = ""; // NOME da Pessoa Cadastrada
 
+    // Corpo Principal do Algoritmo
     public static void MainUI(){
         View.CreateAdmin();
         int value = 0;
@@ -12,10 +13,12 @@ static class IndexUI
             else {
                 Console.WriteLine($"Bem-Vindo ao E-Commerce {name}!");
                 if (name == "Admin") value = AdminUI();
-                else value = ClientUI();
+                else {View.Insert5(true, 0, id); value = ClientUI();}
             }
         }while(value != 99);
     }
+
+    // Interface de Usuário para Visitantes
     public static int VisitorUI(){
         int value = 0;
         value = MenuVisitor();
@@ -27,10 +30,11 @@ static class IndexUI
                 if(x != null) {
                     id = x.id;
                     name = x.name;
-                }   
+                }
                 break;
             case 2:
                 OPClient.InsertClient();
+                Console.Clear();
                 break;
             case 99:
                 break;
@@ -41,7 +45,7 @@ static class IndexUI
 
         return value;
     }
-
+    // Interface do Usuário para Administrador
     public static int AdminUI(){
         int value = 0;
         value = MenuAdmin();
@@ -101,6 +105,7 @@ static class IndexUI
 
         return value;
     }
+    // Interface de Usuário para Clientes
     public static int ClientUI(){
         int value = 0;
         value = MenuClient();
@@ -134,6 +139,7 @@ static class IndexUI
         return value;
     }
 
+    // Menu de Escolhas para Visitantes/Página de Login
     public static int MenuVisitor(){
         Console.WriteLine("------------------------------ Login -------------------------------");
         Console.WriteLine("Clientes: [1]Fazer Login [2]Cadastrar");
@@ -142,6 +148,7 @@ static class IndexUI
         Console.Write("O Que Deseja: ");
         return int.Parse(Console.ReadLine());
     }
+    // Menu de Escolha para Administrador/Conta de Admin
     public static int MenuAdmin(){
         Console.WriteLine("------------------------------ Menu de Admin -------------------------------");
         Console.WriteLine("Clientes: [1]Inserir Cliente [2]Excluir Cliente [3]Listar Clientes [4]Atualizar Cadastro");
@@ -152,7 +159,7 @@ static class IndexUI
         Console.Write("O Que Deseja: ");
         return int.Parse(Console.ReadLine());
     }
-
+    // Menu de Escolha para Clientes/Sistema de Compras
     public static int MenuClient(){
         Console.WriteLine("------------------------------ Menu Cliente -------------------------------");
         Console.WriteLine("Operações: [1]Listar Produtos [2]Adicionar Produto ao Carrinho [3]Fechar Pedidos [4]Ver Meus Pedidos");

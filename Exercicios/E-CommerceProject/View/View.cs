@@ -1,11 +1,13 @@
 static class View
 {
+    // Criar o Cadastro de Admin
     public static void CreateAdmin(){
         bool create = false;
         foreach(Client i in List1()) if(i.name == "Admin") create = true;
         if(create != true) Insert1("Admin", "Admin@Admin.com", "84940028922", "1234");
     }
-
+    
+    // Verificar o Cadastro Informado pelo E-mail e Senha 
     public static Client Verification(string email, string password){
         foreach(Client i in List1()) if(i.email == email && i.password == password) return i;
         return null;
@@ -14,6 +16,8 @@ static class View
     // 1 - Cliente
     // 2 - Categoria
     // 3 - Produto
+    // 4 - Venda de Item
+    // 5 - Venda
 
     public static void Insert1(string name, string email, string phone, string senha){
         Client x = new Client(0, name, email, phone, senha);
@@ -30,6 +34,18 @@ static class View
         ProductList.Insert(x);
     }
 
+    public static void Insert4(int quantity, int idSale, int idProduct){
+        Product p = List3Id(idProduct);
+        double price = p.price * quantity;
+        ItemSell x = new ItemSell(0, quantity, price, idSale, idProduct);
+        ItemSellList.Insert(x);
+    }
+
+    public static void Insert5(bool cart, double total, int idClient){
+        Sale x = new Sale(0, cart, total, idClient);
+        SaleList.Insert(x);
+    }
+
     public static void Del1(int id){
         Client x = ClientList.ListId(id);
         ClientList.Del(x);
@@ -43,6 +59,16 @@ static class View
     public static void Del3(int id){
         Product x = ProductList.ListId(id);
         ProductList.Del(x);
+    }
+
+    public static void Del4(int id){
+        ItemSell x = ItemSellList.ListId(id);
+        ItemSellList.Del(x);
+    }
+
+    public static void Del5(int id){
+        Sale x = SaleList.ListId(id);
+        SaleList.Del(x);
     }
 
     public static List<Client> List1(){
@@ -63,6 +89,14 @@ static class View
 
     public static Product List3Id(int id){
         return ProductList.ListId(id);
+    }
+
+    public static List<ItemSell> List4(){
+        return ItemSellList.List();
+    }
+
+    public static List<Sale> List5(){
+        return SaleList.List();
     }
 
     public static void Update1(int id, string name, string email, string phone, string password){

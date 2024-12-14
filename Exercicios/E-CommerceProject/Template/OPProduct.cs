@@ -1,4 +1,4 @@
-class OPProduct
+static class OPProduct
 {
     public static void CreateProduct(){
         // Informações do Produto
@@ -26,7 +26,7 @@ class OPProduct
     public static void ListP(){
         // Retorna a Lista de Produtos - Nenhum Produto || Lista de Produtos
          if (View.List3().Count() == 0){
-            Console.WriteLine("Nenhum Produto Encontrada! \n");
+            Console.WriteLine("Nenhum Produto Encontrado! \n");
         } else {
             Console.WriteLine("Lista de Produtos: ");
             foreach (Product i in View.List3()){

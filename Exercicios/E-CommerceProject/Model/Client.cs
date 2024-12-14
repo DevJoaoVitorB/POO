@@ -2,7 +2,7 @@ using System.Text.Json;
 
 static class ClientList
 {
-    private static List<Client> Clients = new List<Client>();
+    private static List<Client> Clients = new List<Client>(); // Lista de Clientes
 
     public static void Insert(Client x){
         // Abrir Lista de Clientes

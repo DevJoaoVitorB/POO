@@ -2,7 +2,7 @@ using System.Text.Json;
 
 static class CategoryList
 {
-    private static List<Category> Categories = new List<Category>();
+    private static List<Category> Categories = new List<Category>(); // Lista de Categorias
 
     public static void Insert(Category x){
         // Abrir Lista de Categorias
