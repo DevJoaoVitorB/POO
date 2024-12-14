@@ -1,5 +1,18 @@
 static class OPClient
 {
+    public static Client VerificationClient(){
+        // Informações para Verificar Cliente Cadastrado
+        Console.WriteLine("Informe o Email do Cliente: ");
+        string email = Console.ReadLine();
+        Console.WriteLine("Informe a Senha do Cliente: ");
+        string password = Console.ReadLine();
+        Client x = View.Verification(email, password);
+        // Verificação do Email e Senha do Cliente
+        if(x == null) Console.WriteLine("Usuário não Encontrado, Senha ou Email Inválidos!");
+        else return x;
+        return null;
+    }
+
     public static void InsertClient(){
         // Informações de um Novo Cliente
         Console.WriteLine("Digite o Nome do Cliente: ");

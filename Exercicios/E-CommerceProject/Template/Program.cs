@@ -2,7 +2,7 @@
 static class IndexUI
 {
     private static int id = 0;
-    private static string name = ""
+    private static string name = "";
 
     public static void MainUI(){
         View.CreateAdmin();
@@ -23,12 +23,14 @@ static class IndexUI
 
         switch (value){
             case 1:
-
+                Client x = OPClient.VerificationClient();
+                if(x != null) {
+                    id = x.id;
+                    name = x.name;
+                }   
                 break;
             case 2:
-
-                break;
-            case 3:
+                OPClient.InsertClient();
                 break;
             case 99:
                 break;
@@ -37,7 +39,6 @@ static class IndexUI
                 break;
         }
 
-        Console.Clear();
         return value;
     }
 
@@ -87,8 +88,9 @@ static class IndexUI
                 OPProduct.PricePercentage();
                 break;
             case 15:
+                Console.WriteLine("As Operações de Cliente, Categoria e Produtos foram Salvas!");
                 id = 0;
-                Console.WriteLine("Os Clientes, As Categorias e Os Produtos forma salvos no Banco de Dados.");
+                name = "";
                 break;
             case 99:
                 break;
@@ -97,7 +99,6 @@ static class IndexUI
                 break;
         }
 
-        Console.Clear();
         return value;
     }
     public static int ClientUI(){
@@ -110,17 +111,18 @@ static class IndexUI
                 OPProduct.ListP();
                 break;
             case 2:
-
+                Console.WriteLine("ADD Produto");
                 break;
             case 3:
-
+                Console.WriteLine("Fecha Pedido");
                 break;
             case 4:
-                
+                Console.WriteLine("Ver Pedidos");
                 break;
             case 5:
+                Console.WriteLine($"Obrigado pelas Compras {name}!");
                 id = 0;
-                Console.WriteLine($"Obrigado Pela Confiança {name}! Suas Operações de Compra e Adição de Carrinho Foram Salvas!");
+                name = "";
                 break;
             case 99:
                 break;
@@ -129,7 +131,6 @@ static class IndexUI
                 break;
         }
 
-        Console.Clear();
         return value;
     }
 

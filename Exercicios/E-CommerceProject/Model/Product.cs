@@ -1,22 +1,22 @@
 using System.Text.Json;
 
-static class ItemList
+static class ProductList
 {
-    private static List<Item> Products = new List<Item>();
+    private static List<Product> Products = new List<Product>();
 
-    public static void Insert(Item x){
+    public static void Insert(Product x){
         // Abrir Lista de Produtos
         Open();
         // Obter o Maior ID da Lista de Produtos e Somar +1
         int id = 0;
-        foreach (Item i in Products) if (i.id > id) id = i.id;
+        foreach (Product i in Products) if (i.id > id) id = i.id;
         x.id = id + 1;
         // Adicionar Produto e Salvar
         Products.Add(x);
         Close();
     }
 
-    public static void Del(Item x){
+    public static void Del(Product x){
         // Excluir Produto e Salvar
         if (x != null){
             Products.Remove(x);
@@ -24,22 +24,22 @@ static class ItemList
         } 
     }
 
-    public static List<Item> List(){
+    public static List<Product> List(){
         // Retorna a Lista de Produtos
         Open();
         return Products;
     }
 
-    public static Item ListId(int id){
+    public static Product ListId(int id){
         // Retorna um Produto que está na Lista de Produto
         Open();
-        foreach(Item i in Products) if (i.id == id) return i;
+        foreach(Product i in Products) if (i.id == id) return i;
         return null;
     }
 
-    public static void Update(Item x){
+    public static void Update(Product x){
         // Atualizar Dados de um Produto e Salvar
-        Item i = ListId(x.id);
+        Product i = ListId(x.id);
         if (i != null){
             Products.Remove(i);
             Products.Add(x);
@@ -52,18 +52,18 @@ static class ItemList
         Products.Clear();
         try{
             string write = File.ReadAllText("ItemList.json");
-            Products = JsonSerializer.Deserialize<List<Item>>(write);
+            Products = JsonSerializer.Deserialize<List<Product>>(write);
         } catch (FileNotFoundException) {}
     }
 
     public static void Close(){
         // Salvar a Lista de Produtos no Arquivo .json
-        string save = JsonSerializer.Serialize<List<Item>>(Products);
+        string save = JsonSerializer.Serialize<List<Product>>(Products);
         File.WriteAllText("ItemList.json", save);
     }
 }
 
-class Item
+class Product
 {
     public int id { get; set; }
     public string description { get; set; }
@@ -71,7 +71,7 @@ class Item
     public int storage { get; set; }
     public int idCategory { get; set; }
 
-    public Item(int id, string description, double price, int storage, int idCategory){
+    public Product(int id, string description, double price, int storage, int idCategory){
         this.id = id;
         this.description = description;
         this.price = price;

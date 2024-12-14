@@ -1,5 +1,16 @@
 static class View
 {
+    public static void CreateAdmin(){
+        bool create = false;
+        foreach(Client i in List1()) if(i.name == "Admin") create = true;
+        if(create != true) Insert1("Admin", "Admin@Admin.com", "84940028922", "1234");
+    }
+
+    public static Client Verification(string email, string password){
+        foreach(Client i in List1()) if(i.email == email && i.password == password) return i;
+        return null;
+    }
+
     // 1 - Cliente
     // 2 - Categoria
     // 3 - Produto
@@ -15,8 +26,8 @@ static class View
     }
 
     public static void Insert3(string description, double price, int storage, int idCategory){
-        Item x = new Item(0, description, price, storage, idCategory);
-        ItemList.Insert(x);
+        Product x = new Product(0, description, price, storage, idCategory);
+        ProductList.Insert(x);
     }
 
     public static void Del1(int id){
@@ -30,8 +41,8 @@ static class View
     }
 
     public static void Del3(int id){
-        Item x = ItemList.ListId(id);
-        ItemList.Del(x);
+        Product x = ProductList.ListId(id);
+        ProductList.Del(x);
     }
 
     public static List<Client> List1(){
@@ -46,12 +57,12 @@ static class View
         return CategoryList.ListId(id);
     }
 
-    public static List<Item> List3(){
-        return ItemList.List();
+    public static List<Product> List3(){
+        return ProductList.List();
     }
 
-    public static Item List3Id(int id){
-        return ItemList.ListId(id);
+    public static Product List3Id(int id){
+        return ProductList.ListId(id);
     }
 
     public static void Update1(int id, string name, string email, string phone, string password){
@@ -65,17 +76,17 @@ static class View
     }
 
     public static void Update3(int id, string description, double price, int storage, int idCategory){
-        Item x = new Item(id, description, price, storage, idCategory);
-        ItemList.Update(x);
+        Product x = new Product(id, description, price, storage, idCategory);
+        ProductList.Update(x);
     }
 
     public static void Percentual(double percentual){ 
         for(int i = 0; i < List3().Count(); i++){
-            Item copy = List3()[i];
-            Item x = List3Id(copy.id);
+            Product copy = List3()[i];
+            Product x = List3Id(copy.id);
 
             x.price = (1 + percentual) * copy.price;
-            ItemList.Close();
+            ProductList.Close();
         }
     }
 }

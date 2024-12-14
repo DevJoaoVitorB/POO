@@ -1,6 +1,6 @@
 class OPProduct
 {
-    public static void CreateItem(){
+    public static void CreateProduct(){
         // Informações do Produto
         Console.WriteLine("Informe a Descrição(NOME) do Produto: ");
         string description = Console.ReadLine();
@@ -8,37 +8,37 @@ class OPProduct
         double price = double.Parse(Console.ReadLine());
         Console.WriteLine("Informe a Quantidade em Estoque do Produto: ");
         int storage = int.Parse(Console.ReadLine());
-        ListC2();
+        OPCategory.ListC2();
         Console.WriteLine("Informe o ID da Categoria do Produto: ");
         int idCategory = int.Parse(Console.ReadLine());
         // Criar Produto
         View.Insert3(description, price, storage, idCategory);
     }
-    public static void DelItem(){
+    public static void DelProduct(){
         // Listar Produto
-        ListI();
+        ListP();
         // ID do Produto a ser Deletado
         Console.WriteLine("Informe o Número do Produto a ser Excluido: ");
         int id = int.Parse(Console.ReadLine());
         // Deletar o Produto
         View.Del3(id);
     }
-    public static void ListI(){
+    public static void ListP(){
         // Retorna a Lista de Produtos - Nenhum Produto || Lista de Produtos
          if (View.List3().Count() == 0){
             Console.WriteLine("Nenhum Produto Encontrada! \n");
         } else {
             Console.WriteLine("Lista de Produtos: ");
-            foreach (Item i in View.List3()){
+            foreach (Product i in View.List3()){
                 int idCategory = i.idCategory;
                 Category category = View.List2Id(idCategory);
                 Console.WriteLine($"{i}{category.description} \n");
             }
         }
     }
-    public static void UpdateItem(){
+    public static void UpdateProduct(){
         // Lista Produtos
-        ListI();
+        ListP();
         // Informa o ID do Produto a ser Atualizado
         Console.WriteLine("Informe o Número do Produto que Deseja Atualizar os Dados: ");
         int id = int.Parse(Console.ReadLine());
@@ -49,7 +49,7 @@ class OPProduct
         double price = double.Parse(Console.ReadLine());
         Console.WriteLine("Informe a nova Quantidade em Estoque do Produto: ");
         int storage = int.Parse(Console.ReadLine());
-        ListC2();
+        OPCategory.ListC2();
         Console.WriteLine("Informe o Número da Nova Categoria do Produto: ");
         int idCategory = int.Parse(Console.ReadLine());
         // Substituir o Velho Produto pelo Novo
