@@ -80,7 +80,7 @@ class ItemSell
     }
 
     public override string ToString(){
-        return $"Quantidade: {quantity} \nPreço a Pagar: {price} \n";
+        return $"\nQuantidade: {quantity} \nPreço a Pagar: R${price:f2} \nNúmero de Verificação: {id}\n";
     }
 
 }

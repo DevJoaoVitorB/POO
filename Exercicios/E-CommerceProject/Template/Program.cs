@@ -13,7 +13,7 @@ static class IndexUI
             else {
                 Console.WriteLine($"Bem-Vindo ao E-Commerce {name}!");
                 if (name == "Admin") value = AdminUI();
-                else {View.Insert5(true, 0, id); value = ClientUI();}
+                else value = ClientUI();
             }
         }while(value != 99);
     }
@@ -116,13 +116,13 @@ static class IndexUI
                 OPProduct.ListP();
                 break;
             case 2:
-                Console.WriteLine("ADD Produto");
+                OPSale.MyCart(id);
                 break;
             case 3:
-                Console.WriteLine("Fecha Pedido");
+                OPSale.MakeSale(id);
                 break;
             case 4:
-                Console.WriteLine("Ver Pedidos");
+                OPSale.ListSale(id);
                 break;
             case 5:
                 Console.WriteLine($"Obrigado pelas Compras {name}!");
@@ -162,7 +162,7 @@ static class IndexUI
     // Menu de Escolha para Clientes/Sistema de Compras
     public static int MenuClient(){
         Console.WriteLine("------------------------------ Menu Cliente -------------------------------");
-        Console.WriteLine("Operações: [1]Listar Produtos [2]Adicionar Produto ao Carrinho [3]Fechar Pedidos [4]Ver Meus Pedidos");
+        Console.WriteLine("Operações: [1]Listar Produtos [2]Meu Carrinho [3]Fechar Pedidos [4]Ver Meus Pedidos");
         Console.WriteLine("\n[5]Login [99]Sair do Sistema");
         Console.WriteLine("-------------------------------------------------------------------------------");
         Console.Write("O Que Deseja: ");

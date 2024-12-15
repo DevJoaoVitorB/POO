@@ -66,7 +66,7 @@ static class SaleList
 class Sale
 {
     public int id {get; set;}
-    public DateTime day {get; set;}
+    public object day {get; set;}
     public bool cart {get; set;}
     public double total {get; set;}
     public int idClient {get; set;}
@@ -76,10 +76,10 @@ class Sale
         this.cart = cart;
         this.total = total;
         this.idClient = idClient;
-        day = DateTime.Now;
+        day = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
     }
 
     public override string ToString(){
-        return $"COMPRA {id}: \n\tDia da Compra: {day} \n\tTotal a Pagar: {total} \n\t";
+        return $"COMPRA {id}: \n\tDia da Compra: {day} \n\tTotal a Pagar: R${total:f2} \n\tStatus do Carrinho: {cart}";
     }
 }

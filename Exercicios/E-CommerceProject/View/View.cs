@@ -34,11 +34,19 @@ static class View
         ProductList.Insert(x);
     }
 
-    public static void Insert4(int quantity, int idSale, int idProduct){
+    public static int Insert4(int quantity, int idSale, int idProduct){
         Product p = List3Id(idProduct);
-        double price = p.price * quantity;
-        ItemSell x = new ItemSell(0, quantity, price, idSale, idProduct);
-        ItemSellList.Insert(x);
+        if(quantity > p.storage) return 0;
+        else {
+            // Preço a Ser Pago pelo Pedido!
+            double price = p.price * quantity;
+            // Atualizar o Estoque do Produto!
+            Update3(p.id, p.description, p.price, (p.storage - quantity), p.idCategory);
+            // Criar o Pedido e Inserir no Carrinho!
+            ItemSell x = new ItemSell(0, quantity, price, idSale, idProduct);
+            ItemSellList.Insert(x);
+            return 1;
+        }
     }
 
     public static void Insert5(bool cart, double total, int idClient){
@@ -63,6 +71,8 @@ static class View
 
     public static void Del4(int id){
         ItemSell x = ItemSellList.ListId(id);
+        Product p = List3Id(x.idProduct);
+        Update3(p.id, p.description, p.price, (x.quantity + p.storage), p.idCategory);
         ItemSellList.Del(x);
     }
 
@@ -95,8 +105,16 @@ static class View
         return ItemSellList.List();
     }
 
+    public static ItemSell List4Id(int id){
+        return ItemSellList.ListId(id);
+    }
+
     public static List<Sale> List5(){
         return SaleList.List();
+    }
+
+    public static Sale List5Id(int id){
+        return SaleList.ListId(id);
     }
 
     public static void Update1(int id, string name, string email, string phone, string password){
@@ -114,6 +132,22 @@ static class View
         ProductList.Update(x);
     }
 
+    public static int Update4(int id, int quantity, int idSale, int idProduct){
+        ItemSell i = List4Id(id);
+        Product p = List3Id(idProduct);
+        if(quantity > i.quantity) return 0;
+        else {
+            // Preço a Ser Pago pelo Pedido!
+            double price = p.price * quantity;
+            // Atualizar o Estoque do Produto!
+            Update3(p.id, p.description, p.price, ((i.quantity + p.storage) - quantity), p.idCategory);
+            // Criar o Pedido e Inserir no Carrinho!
+            ItemSell x = new ItemSell(id, quantity, price, idSale, idProduct);
+            ItemSellList.Update(x);
+            return 1;
+        }
+    }
+    
     public static void Percentual(double percentual){ 
         for(int i = 0; i < List3().Count(); i++){
             Product copy = List3()[i];

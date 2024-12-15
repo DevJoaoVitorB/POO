@@ -8,13 +8,16 @@ static class OPCategory
         View.Insert2(description);
     }
     public static void DelCategory(){
-        // Lista Categoria
-        ListC2();
-        // ID da Categoria a ser Deletada
-        Console.WriteLine("Informe o Número da Categoria que Deseja Excluir: ");
-        int id = int.Parse(Console.ReadLine());
-        // Deletar Categoria
-        View.Del2(id);
+        if(View.List2().Count() == 0) ListC2();
+        else {
+            // Lista Categoria
+            ListC2();
+            // ID da Categoria a ser Deletada
+            Console.WriteLine("Informe o Número da Categoria que Deseja Excluir: ");
+            int id = int.Parse(Console.ReadLine());
+            // Deletar Categoria
+            View.Del2(id);
+        }
     }
     public static void ListC2(){
         // Retorna a Lista de Categorias - Nenhuma Categoria || Lista de Categoria
@@ -26,15 +29,18 @@ static class OPCategory
         }
     }
     public static void UpdateCategory(){
-        // Lista de Categorias
-        ListC2();
-        // ID da Categoria a ser Atualizada
-        Console.WriteLine("Informe o Número da Categoria que Deseja Atualizar os Dados: ");
-        int id = int.Parse(Console.ReadLine());
-        // Novas Informações da Categoria
-        Console.WriteLine("Informe a Nova Descrição(NOME) da Categoria: ");
-        string description = Console.ReadLine();
-        // Substituir a Velha Categoria pela Nova
-        View.Update2(id, description);
+        if(View.List2().Count() == 0) ListC2();
+        else {
+            // Lista de Categorias
+            ListC2();
+            // ID da Categoria a ser Atualizada
+            Console.WriteLine("Informe o Número da Categoria que Deseja Atualizar os Dados: ");
+            int id = int.Parse(Console.ReadLine());
+            // Novas Informações da Categoria
+            Console.WriteLine("Informe a Nova Descrição(NOME) da Categoria: ");
+            string description = Console.ReadLine();
+            // Substituir a Velha Categoria pela Nova
+            View.Update2(id, description);
+        }
     }
 }

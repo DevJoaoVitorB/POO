@@ -9,7 +9,7 @@ static class OPClient
         Client x = View.Verification(email, password);
         // Verificação do Email e Senha do Cliente
         if(x == null) Console.WriteLine("Usuário não Encontrado, Senha ou Email Inválidos!");
-        else return x;
+        else {View.Insert5(true, 0, x.id); return x;}
         return null;
     }
 
@@ -24,16 +24,22 @@ static class OPClient
         Console.WriteLine("Digite a Senha do Cliente: ");
         string password = Console.ReadLine();
         // Inserir Cliente na Lista de Clientes
-        View.Insert1(name, email, phone, password);
+        int verification = 0;
+        foreach(Client c in ListC1()) if(c.email == email) verification = 1;
+        if (verification == 1) Console.WriteLine("Há um Cliente Cadastrado com esse E-Mail!");
+        else View.Insert1(name, email, phone, password);
     } 
     public static void DelClient(){
-        // Listar Clientes
-        ListC1();
-        // ID do Cadastro a ser Excluir
-        Console.WriteLine("Informe o Id do Cliente que Deseja Excluir: ");
-        int id = int.Parse(Console.ReadLine());
-        // Deletar um Cadastro
-        View.Del1(id);
+        if(View.List1().Count() == 0) ListC1();
+        else {
+            // Listar Clientes
+            ListC1();
+            // ID do Cadastro a ser Excluir
+            Console.WriteLine("Informe o Id do Cliente que Deseja Excluir: ");
+            int id = int.Parse(Console.ReadLine());
+            // Deletar um Cadastro
+            View.Del1(id);
+        }
     }
     public static void ListC1(){
         // Listar Clientes - Sem Cliente || Lista de Clientes
@@ -45,21 +51,24 @@ static class OPClient
         }
     }
     public static void UpdateRegister(){
-        // Listar Clientes
-        ListC1();
-        // ID do Cadastro a ser Atualizado
-        Console.WriteLine("Informe o Id do Cliente que Deseja Atualizar os Dados: ");
-        int id = int.Parse(Console.ReadLine());
-        // Novas Informações de Cadastro
-        Console.WriteLine("Digite o Novo Nome do Cliente: ");
-        string name = Console.ReadLine();
-        Console.WriteLine("Digite o Novo E-Mail do Cliente: "); 
-        string email = Console.ReadLine();
-        Console.WriteLine("Digite o Novo Telefone do Cliente (Padrão: DD9XXXXXXXX): ");
-        string phone = Console.ReadLine();
-        Console.WriteLine("Digite a Nova Senha do Cliente: ");
-        string password = Console.ReadLine();
-        // Criar Novo Cliente e Substituir o Velho pelo Novo
-        View.Update1(id, name, email, phone, password);
+        if(View.List1().Count() == 0) ListC1();
+        else {
+            // Listar Clientes
+            ListC1();
+            // ID do Cadastro a ser Atualizado
+            Console.WriteLine("Informe o Id do Cliente que Deseja Atualizar os Dados: ");
+            int id = int.Parse(Console.ReadLine());
+            // Novas Informações de Cadastro
+            Console.WriteLine("Digite o Novo Nome do Cliente: ");
+            string name = Console.ReadLine();
+            Console.WriteLine("Digite o Novo E-Mail do Cliente: "); 
+            string email = Console.ReadLine();
+            Console.WriteLine("Digite o Novo Telefone do Cliente (Padrão: DD9XXXXXXXX): ");
+            string phone = Console.ReadLine();
+            Console.WriteLine("Digite a Nova Senha do Cliente: ");
+            string password = Console.ReadLine();
+            // Criar Novo Cliente e Substituir o Velho pelo Novo
+            View.Update1(id, name, email, phone, password);
+        }
     }
 }
