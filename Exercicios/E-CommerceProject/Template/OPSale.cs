@@ -30,16 +30,16 @@ static class OPSale
         if (View.List3().Count() == 0) OPProduct.ListP();
         else {
             // Pegar o Id de Venda do Cliente
-            int idS = 0;
-            foreach(Sale s in View.List5()) if(s.idClient == id && s.cart == true) idS = s.id;
+            int idSale = 0;
+            foreach(Sale s in View.List5()) if(s.idClient == id && s.cart == true) idSale = s.id;
             // Informações do Produto a ser Adicionado ao Carrinho
             OPProduct.ListP();
             Console.WriteLine("Informe o Número do Produto que deseja: ");
-            int idP = int.Parse(Console.ReadLine());
+            int idProduct = int.Parse(Console.ReadLine());
             Console.WriteLine("Informe a Quantidade do Produto que deseja Comprar: ");
             int quantity = int.Parse(Console.ReadLine());
             // Inserir Produto no Carrinho
-            int value = View.Insert4(quantity, idS, idP);
+            int value = View.Insert4(quantity, idSale, idProduct);
             if(value == 0){
                 Console.WriteLine("A Quantidade Informada Excedeu a Quantidade do Produto em Estoque! \n");
             }
@@ -96,7 +96,40 @@ static class OPSale
     }
 
     public static void MakeSale(int id){
-
+        // Preparar a Venda
+        int idSale = 0;
+        foreach(Sale s in View.List5()) if(s.idClient == id && s.cart == true) idSale = s.id;
+        Sale x = View.List5Id(idSale);
+        foreach(ItemSell i in View.List4()) if(x.id == i.idSale) x.total += i.price;
+        // Mostrar Carinho e Total da Compra
+        ListCart(id);
+        Console.WriteLine($"{x} \n");
+        Console.WriteLine("Deseja Finalizar a Compra? [1]Sim [2]Não");
+        Console.Write("Finalizar: ");
+        int value = int.Parse(Console.ReadLine());
+        
+        switch(value){
+            case 1:
+                int v = 0;
+                foreach(ItemSell i in View.List4()){
+                    foreach(Product p in View.List3()) if(i.idProduct == p.id && p.storage < i.quantity) {v = 1; Console.WriteLine($"Falta de Estoque para: {p.description}\n");} 
+                }
+                if(v != 1){
+                    View.Update5(x.id, DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), false, x.total, x.idClient);
+                    foreach(ItemSell i in View.List4()){
+                        Product y = View.List3Id(i.idProduct);
+                        View.Update3(y.id, y.description, y.price, (y.storage - i.quantity), y.idCategory);
+                        View.Del4(i.id);
+                    }
+                    View.Insert5(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), true, 0, id);
+                }
+                break;
+            case 2:
+                break;
+            default:
+                Console.WriteLine("Valor Inválido!");
+                break;
+        }
     }
 
     public static void ListSale(int id){

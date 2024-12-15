@@ -40,8 +40,6 @@ static class View
         else {
             // Preço a Ser Pago pelo Pedido!
             double price = p.price * quantity;
-            // Atualizar o Estoque do Produto!
-            Update3(p.id, p.description, p.price, (p.storage - quantity), p.idCategory);
             // Criar o Pedido e Inserir no Carrinho!
             ItemSell x = new ItemSell(0, quantity, price, idSale, idProduct);
             ItemSellList.Insert(x);
@@ -49,8 +47,8 @@ static class View
         }
     }
 
-    public static void Insert5(bool cart, double total, int idClient){
-        Sale x = new Sale(0, cart, total, idClient);
+    public static void Insert5(object day, bool cart, double total, int idClient){
+        Sale x = new Sale(0, day, cart, total, idClient);
         SaleList.Insert(x);
     }
 
@@ -71,8 +69,6 @@ static class View
 
     public static void Del4(int id){
         ItemSell x = ItemSellList.ListId(id);
-        Product p = List3Id(x.idProduct);
-        Update3(p.id, p.description, p.price, (x.quantity + p.storage), p.idCategory);
         ItemSellList.Del(x);
     }
 
@@ -133,19 +129,21 @@ static class View
     }
 
     public static int Update4(int id, int quantity, int idSale, int idProduct){
-        ItemSell i = List4Id(id);
         Product p = List3Id(idProduct);
-        if(quantity > i.quantity) return 0;
+        if(quantity > p.storage) return 0;
         else {
             // Preço a Ser Pago pelo Pedido!
             double price = p.price * quantity;
-            // Atualizar o Estoque do Produto!
-            Update3(p.id, p.description, p.price, ((i.quantity + p.storage) - quantity), p.idCategory);
             // Criar o Pedido e Inserir no Carrinho!
             ItemSell x = new ItemSell(id, quantity, price, idSale, idProduct);
             ItemSellList.Update(x);
             return 1;
         }
+    }
+
+    public static void Update5(int id, object day, bool cart, double total, int idClient){
+        Sale x = new Sale(id, day, cart, total, idClient);
+        SaleList.Update(x);
     }
     
     public static void Percentual(double percentual){ 

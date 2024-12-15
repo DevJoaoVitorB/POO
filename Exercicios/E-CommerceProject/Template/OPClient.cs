@@ -9,7 +9,14 @@ static class OPClient
         Client x = View.Verification(email, password);
         // Verificação do Email e Senha do Cliente
         if(x == null) Console.WriteLine("Usuário não Encontrado, Senha ou Email Inválidos!");
-        else {View.Insert5(true, 0, x.id); return x;}
+        else {
+            int value = 0;
+            foreach(Sale s in View.List5()){
+                if(s.idClient == x.id && s.cart == true) value = 1;  
+            } 
+            if(value != 1 && email != "Admin@Admin.com") View.Insert5(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), true, 0, x.id);
+            return x;
+        }
         return null;
     }
 
@@ -25,7 +32,7 @@ static class OPClient
         string password = Console.ReadLine();
         // Inserir Cliente na Lista de Clientes
         int verification = 0;
-        foreach(Client c in ListC1()) if(c.email == email) verification = 1;
+        foreach(Client c in View.List1()) if(c.email == email) verification = 1;
         if (verification == 1) Console.WriteLine("Há um Cliente Cadastrado com esse E-Mail!");
         else View.Insert1(name, email, phone, password);
     } 
@@ -47,7 +54,7 @@ static class OPClient
             Console.WriteLine("Sem Clientes Cadastrados! \n");
         } else {
             Console.WriteLine("Lista de Clientes: ");
-            foreach (Client c in View.List1()) Console.WriteLine($"{c} \n");
+            foreach (Client c in View.List1()) Console.WriteLine($"{c}");
         }
     }
     public static void UpdateRegister(){

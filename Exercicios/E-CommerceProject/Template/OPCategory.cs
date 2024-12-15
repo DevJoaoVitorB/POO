@@ -25,7 +25,7 @@ static class OPCategory
             Console.WriteLine("Nenhuma Categoria Encontrada! \n");
         } else {
             Console.WriteLine("Lista de Categorias: ");
-            foreach (Category c in View.List2()) Console.WriteLine($"{c} \n");
+            foreach (Category c in View.List2()) Console.WriteLine($"{c}");
         }
     }
     public static void UpdateCategory(){
