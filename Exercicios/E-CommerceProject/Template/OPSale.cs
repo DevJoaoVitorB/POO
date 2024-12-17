@@ -108,6 +108,7 @@ static class OPSale
         Console.Write("Finalizar: ");
         int value = int.Parse(Console.ReadLine());
         
+        // Validação da Compra
         switch(value){
             case 1:
                 int v = 0;
@@ -115,12 +116,14 @@ static class OPSale
                     foreach(Product p in View.List3()) if(i.idProduct == p.id && p.storage < i.quantity) {v = 1; Console.WriteLine($"Falta de Estoque para: {p.description}\n");} 
                 }
                 if(v != 1){
+                    // Fechar Venda
                     View.Update5(x.id, DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), false, x.total, x.idClient);
+                    // Atualizar o Estoque dos Produtos que foram Vendidos
                     foreach(ItemSell i in View.List4()){
                         Product y = View.List3Id(i.idProduct);
                         View.Update3(y.id, y.description, y.price, (y.storage - i.quantity), y.idCategory);
-                        View.Del4(i.id);
                     }
+                    // Criar Nova Venda para o Usuário
                     View.Insert5(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), true, 0, id);
                 }
                 break;
@@ -134,6 +137,11 @@ static class OPSale
 
     public static void ListSale(int id){
         foreach(Sale s in View.List5()) if(s.idClient == id) Console.WriteLine($"{s}");
+    }
+
+    public static void ListSaleAdmin(){
+        if(View.List5().Count() == 0) Console.WriteLine("Nenhuma Venda Encontrada!");
+        else foreach(Sale s in View.List5()){Client x = View.List1Id(s.idClient); Console.WriteLine($"\n\tCLIENTE: {x.name} \n\t{s}");}
     }
 
 }

@@ -51,7 +51,7 @@ static class ProductList
         // Abrir ou Criar um Arquivo .json
         Products.Clear();
         try{
-            string write = File.ReadAllText("ItemList.json");
+            string write = File.ReadAllText("ProductList.json");
             Products = JsonSerializer.Deserialize<List<Product>>(write);
         } catch (FileNotFoundException) {}
     }
@@ -59,7 +59,7 @@ static class ProductList
     public static void Close(){
         // Salvar a Lista de Produtos no Arquivo .json
         string save = JsonSerializer.Serialize<List<Product>>(Products);
-        File.WriteAllText("ItemList.json", save);
+        File.WriteAllText("ProductList.json", save);
     }
 }
 

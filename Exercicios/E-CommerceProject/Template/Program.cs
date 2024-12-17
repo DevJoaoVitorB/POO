@@ -65,30 +65,33 @@ static class IndexUI
                 OPClient.UpdateRegister();
                 break;
             case 5:
-                OPCategory.CreateCategory();
+                OPSale.ListSaleAdmin();
                 break;
             case 6:
-                OPCategory.DelCategory();
+                OPCategory.CreateCategory();
                 break;
             case 7:
-                OPCategory.ListC2();
+                OPCategory.DelCategory();
                 break;
             case 8:
-                OPCategory.UpdateCategory();
+                OPCategory.ListC2();
                 break;
             case 9:
-                OPProduct.CreateProduct();
+                OPCategory.UpdateCategory();
                 break;
             case 10:
-                OPProduct.DelProduct();
+                OPProduct.CreateProduct();
                 break;
             case 11:
-                OPProduct.ListP();
+                OPProduct.DelProduct();
                 break;
             case 12:
-                OPProduct.UpdateProduct();
+                OPProduct.ListP();
                 break;
             case 13:
+                OPProduct.UpdateProduct();
+                break;
+            case 14:
                 OPProduct.PricePercentage();
                 break;
             case 15:
@@ -151,9 +154,9 @@ static class IndexUI
     // Menu de Escolha para Administrador/Conta de Admin
     public static int MenuAdmin(){
         Console.WriteLine("------------------------------ Menu de Admin -------------------------------");
-        Console.WriteLine("Clientes: [1]Inserir Cliente [2]Excluir Cliente [3]Listar Clientes [4]Atualizar Cadastro");
-        Console.WriteLine("Categorias: [5]Criar Categoria [6]Excluir Categoria [7]Listar Categorias [8]Atualizar Categoria") ;
-        Console.WriteLine("Produto: [9]Inserir Produto [10]Excluir Produto [11]Listar Produtos [12]Atualizar Produto [13]Reajuste de Preço(GERAL)");
+        Console.WriteLine("Clientes: [1]Inserir Cliente [2]Excluir Cliente [3]Listar Clientes [4]Atualizar Cadastro [5]Listar Vendas dos Clientes");
+        Console.WriteLine("Categorias: [6]Criar Categoria [7]Excluir Categoria [8]Listar Categorias [9]Atualizar Categoria");
+        Console.WriteLine("Produto: [10]Inserir Produto [11]Excluir Produto [12]Listar Produtos [13]Atualizar Produto [14]Reajuste de Preço(GERAL)");
         Console.WriteLine("\n[15]Login [99]Sair do Sistema");
         Console.WriteLine("-------------------------------------------------------------------------------");
         Console.Write("O Que Deseja: ");

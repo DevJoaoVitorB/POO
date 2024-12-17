@@ -81,6 +81,10 @@ static class View
         return ClientList.List();
     }
 
+    public static Client List1Id(int id){
+        return ClientList.ListId(id);
+    }
+
     public static List<Category> List2(){
         return CategoryList.List();
     }
