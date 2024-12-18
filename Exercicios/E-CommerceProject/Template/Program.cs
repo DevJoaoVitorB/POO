@@ -11,6 +11,7 @@ static class IndexUI
         do{
             if(id == 0) value = VisitorUI();
             else {
+                View.CreateAdmin();
                 Console.WriteLine($"Bem-Vindo ao E-Commerce {name}!");
                 if (name == "Admin") value = AdminUI();
                 else value = ClientUI();
@@ -147,7 +148,7 @@ static class IndexUI
         Console.WriteLine("------------------------------ Login -------------------------------");
         Console.WriteLine("Clientes: [1]Fazer Login [2]Cadastrar");
         Console.WriteLine("\n[99]Sair do Sistema");
-        Console.WriteLine("-------------------------------------------------------------------------------");
+        Console.WriteLine("--------------------------------------------------------------------");
         Console.Write("O Que Deseja: ");
         return int.Parse(Console.ReadLine());
     }
@@ -158,7 +159,7 @@ static class IndexUI
         Console.WriteLine("Categorias: [6]Criar Categoria [7]Excluir Categoria [8]Listar Categorias [9]Atualizar Categoria");
         Console.WriteLine("Produto: [10]Inserir Produto [11]Excluir Produto [12]Listar Produtos [13]Atualizar Produto [14]Reajuste de Preço(GERAL)");
         Console.WriteLine("\n[15]Login [99]Sair do Sistema");
-        Console.WriteLine("-------------------------------------------------------------------------------");
+        Console.WriteLine("----------------------------------------------------------------------------");
         Console.Write("O Que Deseja: ");
         return int.Parse(Console.ReadLine());
     }
@@ -167,7 +168,7 @@ static class IndexUI
         Console.WriteLine("------------------------------ Menu Cliente -------------------------------");
         Console.WriteLine("Operações: [1]Listar Produtos [2]Meu Carrinho [3]Fechar Pedidos [4]Ver Meus Pedidos");
         Console.WriteLine("\n[5]Login [99]Sair do Sistema");
-        Console.WriteLine("-------------------------------------------------------------------------------");
+        Console.WriteLine("---------------------------------------------------------------------------");
         Console.Write("O Que Deseja: ");
         return int.Parse(Console.ReadLine());
     }

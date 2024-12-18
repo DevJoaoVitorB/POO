@@ -47,7 +47,9 @@ static class OPSale
     }
 
     public static void DelCart(int id){
-        if(View.List4().Count() == 0) ListCart(id);
+        int value = 0;
+        foreach(ItemSell i in View.List4()){Sale s = View.List5Id(i.idSale); if(s.idClient == id && s.cart == true) value = 1;} 
+        if(View.List4().Count() == 0 || value == 0) ListCart(id);
         else {
             // Produto a ser Retirado do Carrinho
             ListCart(id);
@@ -60,12 +62,14 @@ static class OPSale
 
     public static void ListCart(int id){
         // Listar os Produtos do Carrinho - Carrinho Vazio || Carrinho
-        if(View.List4().Count() == 0) Console.WriteLine("Carrinho Vazio! \n");
+        int value = 0;
+        foreach(ItemSell i in View.List4()){Sale s = View.List5Id(i.idSale); if(s.idClient == id) value = 1;} 
+        if(View.List4().Count() == 0 || value == 0) ListCart(id);
         else{
             Console.WriteLine("Meu Carrinho: ");
             foreach(ItemSell i in View.List4()){
                 Sale s = View.List5Id(i.idSale); 
-                if(s.idClient == id){
+                if(s.idClient == id && s.cart == true){
                     Product p = View.List3Id(i.idProduct);
                     Console.WriteLine($"Produto: {p.description}{i} \n");    
                 }
@@ -74,7 +78,9 @@ static class OPSale
     }
 
     public static void UpdateCart(int id){
-        if (View.List4().Count() == 0) ListCart(id);
+        int v = 0;
+        foreach(ItemSell i in View.List4()){Sale s = View.List5Id(i.idSale); if(s.idClient == id && s.cart == true) v = 1;} 
+        if(View.List4().Count() == 0 || v == 0) ListCart(id);
         else {
             // O Produto a ser Atualizado no Carrinho
             ListCart(id);
@@ -97,41 +103,49 @@ static class OPSale
 
     public static void MakeSale(int id){
         // Preparar a Venda
-        int idSale = 0;
-        foreach(Sale s in View.List5()) if(s.idClient == id && s.cart == true) idSale = s.id;
-        Sale x = View.List5Id(idSale);
-        foreach(ItemSell i in View.List4()) if(x.id == i.idSale) x.total += i.price;
-        // Mostrar Carinho e Total da Compra
-        ListCart(id);
-        Console.WriteLine($"{x} \n");
-        Console.WriteLine("Deseja Finalizar a Compra? [1]Sim [2]Não");
-        Console.Write("Finalizar: ");
-        int value = int.Parse(Console.ReadLine());
-        
-        // Validação da Compra
-        switch(value){
-            case 1:
-                int v = 0;
-                foreach(ItemSell i in View.List4()){
-                    foreach(Product p in View.List3()) if(i.idProduct == p.id && p.storage < i.quantity) {v = 1; Console.WriteLine($"Falta de Estoque para: {p.description}\n");} 
-                }
-                if(v != 1){
-                    // Fechar Venda
-                    View.Update5(x.id, DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), false, x.total, x.idClient);
-                    // Atualizar o Estoque dos Produtos que foram Vendidos
+        int v1 = 0;
+        foreach(ItemSell i in View.List4()){Sale s = View.List5Id(i.idSale); if(s.idClient == id && s.cart == true) v1 = 1;} 
+        if(View.List4().Count() == 0 || v1 == 0) ListCart(id);
+        else {
+            int idSale = 0;
+            foreach(Sale s in View.List5()) if(s.idClient == id && s.cart == true) idSale = s.id;
+            Sale x = View.List5Id(idSale);
+            foreach(ItemSell i in View.List4()) if(x.id == i.idSale) x.total += i.price;
+            // Mostrar Carinho e Total da Compra
+            ListCart(id);
+            Console.WriteLine($"{x} \n");
+            Console.WriteLine("Deseja Finalizar a Compra? [1]Sim [2]Não");
+            Console.Write("Finalizar: ");
+            int value = int.Parse(Console.ReadLine());
+            
+            // Validação da Compra
+            switch(value){
+                case 1:
+                    int v = 0;
                     foreach(ItemSell i in View.List4()){
-                        Product y = View.List3Id(i.idProduct);
-                        View.Update3(y.id, y.description, y.price, (y.storage - i.quantity), y.idCategory);
+                        foreach(Product p in View.List3()) if(i.idProduct == p.id && p.storage < i.quantity) {v = 1; Console.WriteLine($"Falta de Estoque para: {p.description}\n");} 
                     }
-                    // Criar Nova Venda para o Usuário
-                    View.Insert5(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), true, 0, id);
-                }
-                break;
-            case 2:
-                break;
-            default:
-                Console.WriteLine("Valor Inválido!");
-                break;
+                    if(v != 1){
+                        // Fechar Venda
+                        View.Update5(x.id, DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), false, x.total, x.idClient);
+                        // Atualizar o Estoque dos Produtos que foram Vendidos
+                        foreach(ItemSell i in View.List4()){
+                            Sale Sa = View.List5Id(i.idSale);
+                            if(Sa.idClient == id){
+                                Product y = View.List3Id(i.idProduct);
+                                View.Update3(y.id, y.description, y.price, (y.storage - i.quantity), y.idCategory);
+                            } 
+                        }
+                        // Criar Nova Venda para o Usuário
+                        View.Insert5(DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"), true, 0, id);
+                    }
+                    break;
+                case 2:
+                    break;
+                default:
+                    Console.WriteLine("Valor Inválido!");
+                    break;
+            }
         }
     }
 

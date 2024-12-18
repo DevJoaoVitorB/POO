@@ -36,7 +36,7 @@ static class View
 
     public static int Insert4(int quantity, int idSale, int idProduct){
         Product p = List3Id(idProduct);
-        if(quantity > p.storage) return 0;
+        if(quantity > p.storage || quantity < 1) return 0;
         else {
             // Preço a Ser Pago pelo Pedido!
             double price = p.price * quantity;
