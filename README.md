@@ -1,4 +1,4 @@
-# Object Oriented Programming (OOP)
+# Object-Oriented Programming (OOP)
 > Repository focused on the activities and class materials of the Object-Oriented Programming (OOP) discipline
 
 # Programação Orientada a Objeto (POO)
