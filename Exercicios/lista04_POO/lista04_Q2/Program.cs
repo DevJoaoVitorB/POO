@@ -51,6 +51,6 @@ static class Menu
         }while(value != 5);
 
         Console.Clear();
-        Console.WriteLine("Fim do ALgoritimo!");
+        Console.WriteLine("Fim do Algoritmo!");
     }
 }

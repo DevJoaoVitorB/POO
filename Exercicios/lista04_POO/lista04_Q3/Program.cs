@@ -60,6 +60,6 @@ static class Menu
         }while(value != 5);
 
         Console.Clear();
-        Console.WriteLine("Fim do Algoritimo!");
+        Console.WriteLine("Fim do Algoritmo!");
     }
 }

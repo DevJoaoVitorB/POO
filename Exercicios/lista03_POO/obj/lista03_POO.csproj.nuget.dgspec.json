@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/POO/Exercicios/lista03_POO/lista03_POO.csproj": {}
+    "/workspaces/OOP/Exercicios/lista03_POO/lista03_POO.csproj": {}
   },
   "projects": {
-    "/workspaces/POO/Exercicios/lista03_POO/lista03_POO.csproj": {
+    "/workspaces/OOP/Exercicios/lista03_POO/lista03_POO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/POO/Exercicios/lista03_POO/lista03_POO.csproj",
+        "projectUniqueName": "/workspaces/OOP/Exercicios/lista03_POO/lista03_POO.csproj",
         "projectName": "lista03_POO",
-        "projectPath": "/workspaces/POO/Exercicios/lista03_POO/lista03_POO.csproj",
+        "projectPath": "/workspaces/OOP/Exercicios/lista03_POO/lista03_POO.csproj",
         "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/POO/Exercicios/lista03_POO/obj/",
+        "outputPath": "/workspaces/OOP/Exercicios/lista03_POO/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/codespace/.nuget/NuGet/NuGet.Config"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

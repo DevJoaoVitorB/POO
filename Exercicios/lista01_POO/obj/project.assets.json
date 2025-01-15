@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/POO/Exercicios/lista01_POO/lista01_POO.csproj",
+      "projectUniqueName": "/workspaces/OOP/Exercicios/lista01_POO/lista01_POO.csproj",
       "projectName": "lista01_POO",
-      "projectPath": "/workspaces/POO/Exercicios/lista01_POO/lista01_POO.csproj",
+      "projectPath": "/workspaces/OOP/Exercicios/lista01_POO/lista01_POO.csproj",
       "packagesPath": "/home/codespace/.nuget/packages/",
-      "outputPath": "/workspaces/POO/Exercicios/lista01_POO/obj/",
+      "outputPath": "/workspaces/OOP/Exercicios/lista01_POO/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/codespace/.nuget/NuGet/NuGet.Config"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

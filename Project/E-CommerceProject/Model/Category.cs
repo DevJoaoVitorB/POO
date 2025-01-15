@@ -50,7 +50,7 @@ static class CategoryList
         // Abrir ou Criar um Arquivo .json
         Categories.Clear();
         try{
-            string write = File.ReadAllText("Category.json");
+            string write = File.ReadAllText("CategoryList.json");
             Categories = JsonSerializer.Deserialize<List<Category>>(write);
         } catch (FileNotFoundException) {}
     }
@@ -58,7 +58,7 @@ static class CategoryList
     public static void Close(){
         // Salvar a Lista de Clientes no Arquivo .json
         string save = JsonSerializer.Serialize<List<Category>>(Categories);
-        File.WriteAllText("Category.json", save);
+        File.WriteAllText("CategoryList.json", save);
     }
 }
 

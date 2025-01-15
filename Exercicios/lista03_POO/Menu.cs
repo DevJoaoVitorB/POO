@@ -4,11 +4,10 @@ public class Menu
     private Delivery y = new Delivery();
     private Converter z = new Converter();
     private Equation w = new Equation();
-    private Data a = new Data();
     private int value = 0;
     public void Choice(){
         do{
-            Console.Write("Escolha a Questão [1]Q1 [2]Q2 [3]Q3 [4]Q4 [5]Q5 [6]Sair: ");
+            Console.Write("Escolha a Questão [1]Q1 [2]Q2 [3]Q3 [4]Q4 [5]Sair: ");
             value = int.Parse(Console.ReadLine());
 
             Console.Clear();
@@ -50,20 +49,14 @@ public class Menu
                     Console.WriteLine($"Valor do Delta da Equação: {w.Delta():f2} \nValor da Raíz1: {w.Root1():f2} \nValor da Raíz2: {w.Root2():f2} \nApresenta Raíz Real: {w.RealRoot()} \n");
                     break;
                 case 5:
-                    Console.WriteLine("Questão Número 5 da Lista03 - POO");
-                    Console.Write("Informe o Valor a Data no Padrão dd/mm/aaaa: ");
-                    a.SetData(Console.ReadLine());
-                    Console.WriteLine($"{a.ToString()} \n");
-                    break;
-                case 6:
                     break;
                 default:
                     Console.WriteLine("Valor Inválido! \n");
                     break;
             }
-        }while(value != 6);
+        }while(value != 5);
 
         Console.Clear();
-        Console.WriteLine("Finalização do Algoritimo");
+        Console.WriteLine("Finalização do Algoritmo!");
     }
 }

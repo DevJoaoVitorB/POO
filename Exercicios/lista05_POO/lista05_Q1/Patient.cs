@@ -8,7 +8,7 @@ class Patient
     if (name.Length > 0) this.name = name;
     if (CPF.Length == 14) this.CPF = CPF;
     if (phone.Length == 11) this.phone = phone; 
-    if (name.Length <= 0 || CPF.Length != 14 || phone.Length != 11) throw new ArgumentOutOfRangeException("Valor(es) Inválido(s)!");
+    if (name.Length <= 0 || CPF.Length != 14 || phone.Length != 11) throw new ArgumentException("Valor(es) Inválido(s)!");
     this.birth = birth;
    }
 

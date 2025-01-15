@@ -73,6 +73,6 @@ public class Menu
         }while(value != 5);
 
         Console.Clear();
-        Console.WriteLine("Finalização do Algoritimo!");
+        Console.WriteLine("Finalização do Algoritmo!");
     }
 }

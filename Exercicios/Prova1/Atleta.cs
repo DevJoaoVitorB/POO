@@ -6,8 +6,8 @@ class Atleta
 
     public Atleta(int id, string nome, DateTime nascimento){
         if(id >= 0) this.id = id;
-        if(nome.Length() > 0) this.nome = nome;
-        if(nome.Length() <= 0) throw new ArgumentException("Valor Inválido");
+        if(nome.Length > 0) this.nome = nome;
+        if(nome.Length <= 0) throw new ArgumentException("Valor Inválido");
         this.nascimento = nascimento;
     }
 

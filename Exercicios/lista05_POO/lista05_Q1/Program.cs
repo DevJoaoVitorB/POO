@@ -42,6 +42,6 @@ static class Register
         }while(value != 4);
 
         Console.Clear();
-        Console.WriteLine("Fim do Algoritimo!");
+        Console.WriteLine("Fim do Algoritmo!");
     }
 }

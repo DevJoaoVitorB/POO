@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/POO/Exercicios/lista05_POO/lista05_Q1/lista05_Q1.csproj": {}
+    "/workspaces/OOP/Exercicios/lista05_POO/lista05_Q1/lista05_Q1.csproj": {}
   },
   "projects": {
-    "/workspaces/POO/Exercicios/lista05_POO/lista05_Q1/lista05_Q1.csproj": {
+    "/workspaces/OOP/Exercicios/lista05_POO/lista05_Q1/lista05_Q1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/POO/Exercicios/lista05_POO/lista05_Q1/lista05_Q1.csproj",
+        "projectUniqueName": "/workspaces/OOP/Exercicios/lista05_POO/lista05_Q1/lista05_Q1.csproj",
         "projectName": "lista05_Q1",
-        "projectPath": "/workspaces/POO/Exercicios/lista05_POO/lista05_Q1/lista05_Q1.csproj",
+        "projectPath": "/workspaces/OOP/Exercicios/lista05_POO/lista05_Q1/lista05_Q1.csproj",
         "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/POO/Exercicios/lista05_POO/lista05_Q1/obj/",
+        "outputPath": "/workspaces/OOP/Exercicios/lista05_POO/lista05_Q1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/codespace/.nuget/NuGet/NuGet.Config"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
