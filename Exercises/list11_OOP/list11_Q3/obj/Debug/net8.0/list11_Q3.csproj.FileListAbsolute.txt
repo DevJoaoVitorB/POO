@@ -1,0 +1,15 @@
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/obj/Debug/net8.0/list11_Q3.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/obj/Debug/net8.0/list11_Q3.AssemblyInfoInputs.cache
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/obj/Debug/net8.0/list11_Q3.AssemblyInfo.cs
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/obj/Debug/net8.0/list11_Q3.csproj.CoreCompileInputs.cache
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/obj/Debug/net8.0/list11_Q3.sourcelink.json
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/bin/Debug/net8.0/list11_Q3
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/bin/Debug/net8.0/list11_Q3.deps.json
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/bin/Debug/net8.0/list11_Q3.runtimeconfig.json
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/bin/Debug/net8.0/list11_Q3.dll
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/bin/Debug/net8.0/list11_Q3.pdb
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/obj/Debug/net8.0/list11_Q3.dll
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/obj/Debug/net8.0/refint/list11_Q3.dll
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/obj/Debug/net8.0/list11_Q3.pdb
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/obj/Debug/net8.0/list11_Q3.genruntimeconfig.cache
+/workspaces/OOP/Exercises/list11_OOP/list11_Q3/obj/Debug/net8.0/ref/list11_Q3.dll
