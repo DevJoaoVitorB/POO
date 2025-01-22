@@ -6,7 +6,8 @@ class Treino
     private int distancia;
     private TimeSpan tempo = new TimeSpan();
 
-    public Treino(int id, int idAtleta, int distancia, DataTime data, TimeSpan tempo){
+    public Treino() {}
+    public Treino(int id, int idAtleta, int distancia, DateTime data, TimeSpan tempo){
         if(id >= 0) this.id = id;
         if(idAtleta >= 0) this.idAtleta = idAtleta;
         if(distancia >= 0) this.distancia = distancia;
@@ -25,7 +26,7 @@ class Treino
     }
 
     public override string ToString(){
-        return $"ID: {id} - ID DO ATLETA: {idAtleta} - DATA: {data} - DISTÂNCIA: {distancia} - TEMPO: {tempo} - PACE: {Pace():f2} \n";
+        return $"ID: {id} - ID DO ATLETA: {idAtleta} - DATA: {data} - DISTÂNCIA: {distancia}km - TEMPO: {tempo} - PACE: {Pace():f2} \n";
     }
 }
 

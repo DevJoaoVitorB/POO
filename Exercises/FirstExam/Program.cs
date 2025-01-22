@@ -52,7 +52,7 @@ static class UI
         int m = int.Parse(Console.ReadLine());
         Console.WriteLine("Informe a Data de Nascimento do Atleta(ANO): ");
         int a = int.Parse(Console.ReadLine());
-        DateTime nascimento = new DateTime(d, m, a);
+        DateTime nascimento = new DateTime(a, m, d);
 
         Atleta x = new Atleta(aux, nome, nascimento);
         aux += 1;
@@ -72,7 +72,7 @@ static class UI
     public static void TreinoInserir(){
         AtletaListar();
         Console.WriteLine("Informe o ID do Atleta do Treino: ");
-        string idAtleta = Console.ReadLine();
+        int idAtleta = int.Parse(Console.ReadLine());
 
         Console.WriteLine("Informe a Data do Treino do Atleta(DIA): ");
         int d = int.Parse(Console.ReadLine());
@@ -80,7 +80,7 @@ static class UI
         int m = int.Parse(Console.ReadLine());
         Console.WriteLine("Informe a Data de Treino do Atleta(ANO): ");
         int a = int.Parse(Console.ReadLine());
-        DateTime data = new DateTime(d, m, a);
+        DateTime data = new DateTime(a, m, d);
 
         Console.WriteLine("Informe a Distância do Treino do Atleta(KM): ");
         int distancia = int.Parse(Console.ReadLine());
@@ -88,12 +88,12 @@ static class UI
         Console.WriteLine("Informe a Tempo do Treino do Atleta(HORAS): ");
         int h = int.Parse(Console.ReadLine());
         Console.WriteLine("Informe a Tempo do Treino do Atleta(MINUTOS): ");
-        int m = int.Parse(Console.ReadLine());
+        int min = int.Parse(Console.ReadLine());
         Console.WriteLine("Informe a Tempo do Treino do Atleta(SEGUNDOS): ");
         int s = int.Parse(Console.ReadLine());
-        TimeSpan tempo = new TimeSpan(h, m, s);
+        TimeSpan tempo = new TimeSpan(h, min, s);
 
-        Treino x = new Atleta(aux2, idAleta, distancia, data, tempo);
+        Treino x = new Treino(aux2, idAtleta, distancia, data, tempo);
         aux2 += 1;
 
         Treinos.Inserir(x);
@@ -119,13 +119,14 @@ static class UI
     public static void TreinoMaisRapido(){
         Console.WriteLine("Informe o ID do Atleta que Deseja Verificar o Treino Mais Rápido: ");
         int id = int.Parse(Console.ReadLine());
+        Treino menor = new Treino();
 
-        foreach(Treino i in Treinos.Listar()) if(i.GetIdAtleta() == idAtleta) Treino menor = i;
+        foreach(Treino i in Treinos.Listar()) if(i.GetIdAtleta() == id) menor = i;
 
         foreach(Treino i in Treinos.Listar()){
-             if(i.GetIdAtleta() == idAtleta){
+            if(i.GetIdAtleta() == id){
                 if(i.Pace() < menor.Pace()) menor = i;
-             }
+            }
         }
 
         Console.WriteLine($"Treino Mais Rápido: {menor}");

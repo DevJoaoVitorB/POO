@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/OOP/Exercicios/Prova1/Prova1.csproj": {}
+    "/workspaces/OOP/Exercises/FirstExam/Prova1.csproj": {}
   },
   "projects": {
-    "/workspaces/OOP/Exercicios/Prova1/Prova1.csproj": {
+    "/workspaces/OOP/Exercises/FirstExam/Prova1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/OOP/Exercicios/Prova1/Prova1.csproj",
+        "projectUniqueName": "/workspaces/OOP/Exercises/FirstExam/Prova1.csproj",
         "projectName": "Prova1",
-        "projectPath": "/workspaces/OOP/Exercicios/Prova1/Prova1.csproj",
+        "projectPath": "/workspaces/OOP/Exercises/FirstExam/Prova1.csproj",
         "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/OOP/Exercicios/Prova1/obj/",
+        "outputPath": "/workspaces/OOP/Exercises/FirstExam/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/codespace/.nuget/NuGet/NuGet.Config"

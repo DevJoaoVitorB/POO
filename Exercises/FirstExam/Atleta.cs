@@ -4,6 +4,8 @@ class Atleta
     private string nome;
     private DateTime nascimento = new DateTime();
 
+    public Atleta() {}
+    
     public Atleta(int id, string nome, DateTime nascimento){
         if(id >= 0) this.id = id;
         if(nome.Length > 0) this.nome = nome;
