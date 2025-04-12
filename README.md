@@ -1,5 +1,3 @@
-# Object-Oriented Programming (OOP)
-> Repository focused on the activities and class materials of the Object-Oriented Programming (OOP) discipline.
+<h1 align="center"> 📦 Programação Orientada a Objeto (POO)</h1>
 
-# Programação Orientada a Objeto (POO)
-> Repositório voltado para as atividades e os materiais de aula da disciplina de Programação Orientada a Objeto (POO).
+<p align="center">Repositório voltado para as atividades e os materiais de aula da disciplina de Programação Orientada a Objeto (POO) do curso <strong>Tecnólogo de Análise e Desenvolvimento de Sistemas</strong> no semestre <strong>2024.2</strong>.</p>
